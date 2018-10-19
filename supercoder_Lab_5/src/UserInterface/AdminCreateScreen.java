@@ -5,6 +5,7 @@
  */
 package UserInterface;
 
+import Business.Abstract.User;
 import Business.Users.Admin;
 import Business.Users.Customer;
 import Business.Users.Supplier;
@@ -31,6 +32,7 @@ public class AdminCreateScreen extends javax.swing.JPanel {
      */
     private JPanel panelRight;
     private Admin admin;
+    private Object radioUserGrp;
     public AdminCreateScreen(JPanel panelRight, Admin admin) {
         initComponents();
         this.panelRight = panelRight;
@@ -152,14 +154,19 @@ public class AdminCreateScreen extends javax.swing.JPanel {
         panelRight.add(this);
         layout.next(panelRight);
         
-        
-        Airliner airliner = travelOffice.getTravelAgency().getMasterTravelSchedule().addAirliner();
-        airliner.setName(NewAirlinerNamejTextField.getText());
-        JOptionPane.showMessageDialog(null, "New airliner successfully added", "Warning", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void radioCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCustomerActionPerformed
         // TODO add your handling code here:
+        if(radioUserGrp.isElected(radioCustomer.getModel())){
+            for(User u:admin.getCustDir().getCustomerList()){
+//                 Customer c = (Customer)u;
+                if(c.getUserName().equalsIgnoreCae(txtUser.getText())){
+                    JOptionPane.showMessageDialog(null,"Customer has been existed");
+                    return;
+                }
+            }
+        }
         
     }//GEN-LAST:event_radioCustomerActionPerformed
 
@@ -172,7 +179,15 @@ public class AdminCreateScreen extends javax.swing.JPanel {
 
     private void radioSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSupplierActionPerformed
         // TODO add your handling code here:
-        
+        if(radioUserGrp.isSelected(radioSupplier.getModel())){
+            for(User u:admin.getSuppDir().getSupplierList()){
+                Supplier s = (Supplier)u;
+                if(s.getUserName().equalsIgnoreCase(txtUser.getText())){
+                    JOptionPane.showMessageDialog(null,"Supplier has been existed");
+                    return;
+                }
+            }
+        }
     }//GEN-LAST:event_radioSupplierActionPerformed
 
     
