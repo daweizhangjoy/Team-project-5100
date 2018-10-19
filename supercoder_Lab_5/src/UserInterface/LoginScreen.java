@@ -115,8 +115,9 @@ public class LoginScreen extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null, "Please select a Row!!");
         }
-        else
-        {*/
+        else*/
+        try
+        {
             if(txtPword.getText().equals(null))
             {
                 JOptionPane.showMessageDialog(null, "Please fill in Password");
@@ -142,11 +143,11 @@ public class LoginScreen extends javax.swing.JPanel {
                     initialize();
                 }
             }
-        /*} 
+        } 
         catch (NullPointerException e) 
         {
-             JOptionPane.showMessageDialog(null, "Please select a Row!!");
-        }*/
+             JOptionPane.showMessageDialog(null, "No Data in Database");
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void comboUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUserActionPerformed
