@@ -162,6 +162,11 @@ public class LoginScreen extends javax.swing.JPanel {
         txtTitle.setText("****** Login Screen");
         comboUser.removeAllItems();
         //only customer or suppliers should be listed based on the selection
+        
+        for(User a : list)
+        {
+            comboUser.addItem(a);
+        }
     }
     
 
