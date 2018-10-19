@@ -17,14 +17,14 @@ public class SuccessScreen extends javax.swing.JPanel {
      * Creates new form SuccessScreen
      */
     private User user; 
+    
+    public SuccessScreen() {
+        initComponents();
+    }
     public SuccessScreen(User user) {
         initComponents();
         this.user = user;
         initialize();
-    }
-
-    SuccessScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

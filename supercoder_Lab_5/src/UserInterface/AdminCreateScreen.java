@@ -252,21 +252,16 @@ public class AdminCreateScreen extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private boolean passwordPatternCorrect() {
-        Pattern p = Pattern.compile("(A-Za-z0-9+_$)?");
-        Pattern p1 = Pattern.compile(".*_.*");
-        Pattern p2 = Pattern.compile(".*+.*");
-        Pattern p3 = Pattern.compile(".*$.*");
+        Pattern p = Pattern.compile("[^A-Za-z0-9+_$]");
+        
         Matcher m = p.matcher(txtPword.getText());
-        Matcher m1 = p.matcher(txtPword.getText());
-        Matcher m2 = p.matcher(txtPword.getText());
-        Matcher m3 = p.matcher(txtPword.getText());
         
         boolean b = m.find();
-        boolean b1 = m1.find();
-        boolean b2 = m2.find();
-        boolean b3 = m3.find();
         
-        if( ( b && (b1 || b2 ||b3) ) == false)
+        //if( ( (b) || (b1 || b2 ||b3) ) == false)
+        //if((b == false) && (((b1 || b2) ||b3) == true))
+        //if(b == false)
+        if(b == false)
         {
             return true;
         }
@@ -277,16 +272,17 @@ public class AdminCreateScreen extends javax.swing.JPanel {
     }
 
     private boolean usernamePatternCorrect() {
-        Pattern p = Pattern.compile("[^A-Za-z0-9@]");
-        Pattern p1 = Pattern.compile("(A-Za-z0-9@_)?");
+        Pattern p = Pattern.compile("^_");
+        Pattern p1 = Pattern.compile("[^A-Za-z0-9@_]");
         
-        Matcher m = p.matcher(txtPword.getText());
-        Matcher m1 = p1.matcher(txtPword.getText());
+        Matcher m = p.matcher(txtUser.getText());
+        Matcher m1 = p1.matcher(txtUser.getText());
         
         boolean b = m.find();
         boolean b1 = m1.find();
         
-        if((b && b1) == true)
+        if((b || b1) == true)
+        //if((b1) == true)
         {
             return false;
         }
