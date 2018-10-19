@@ -121,7 +121,17 @@ public class AdminMainScreen extends javax.swing.JPanel {
             row[1]=s.getDirectory().getProductList().size();
             dtm.addRow(row);
         }
-
+        
+        /*populate Customer Table*/
+        DefaultTableModel dtm1 = (DefaultTableModel)tableCust.getModel();
+        dtm1.setRowCount(0);
+        for(User u : admin.getCustDir().getCustomerList()){
+            Customer s = (Customer)u;
+            Object[] row = new Object[dtm1.getColumnCount()];
+            row[0]=s;
+            row[1]=s.getDateNowStr();
+            dtm1.addRow(row);
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

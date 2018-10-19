@@ -32,7 +32,6 @@ public class AdminCreateScreen extends javax.swing.JPanel {
      */
     private JPanel panelRight;
     private Admin admin;
-    private Object radioUserGrp;
     public AdminCreateScreen(JPanel panelRight, Admin admin) {
         initComponents();
         this.panelRight = panelRight;
@@ -158,7 +157,8 @@ public class AdminCreateScreen extends javax.swing.JPanel {
 
     private void radioCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCustomerActionPerformed
         // TODO add your handling code here:
-        if(radioUserGrp.isElected(radioCustomer.getModel())){
+        /*if(radioUserGrp.isElected(radioCustomer.getModel()))
+        {
             for(User u:admin.getCustDir().getCustomerList()){
 //                 Customer c = (Customer)u;
                 if(c.getUserName().equalsIgnoreCae(txtUser.getText())){
@@ -166,8 +166,11 @@ public class AdminCreateScreen extends javax.swing.JPanel {
                     return;
                 }
             }
+        }*//*delete by Hongbo Jiang*/
+        if(radioCustomer.isSelected() == true)
+        {
+            radioSupplier.setSelected(false);
         }
-        
     }//GEN-LAST:event_radioCustomerActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -179,7 +182,7 @@ public class AdminCreateScreen extends javax.swing.JPanel {
 
     private void radioSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSupplierActionPerformed
         // TODO add your handling code here:
-        if(radioUserGrp.isSelected(radioSupplier.getModel())){
+        /*if(radioUserGrp.isSelected(radioSupplier.getModel())){
             for(User u:admin.getSuppDir().getSupplierList()){
                 Supplier s = (Supplier)u;
                 if(s.getUserName().equalsIgnoreCase(txtUser.getText())){
@@ -187,6 +190,10 @@ public class AdminCreateScreen extends javax.swing.JPanel {
                     return;
                 }
             }
+        }*//*delete by Hongbo Jiang*/
+        if(radioSupplier.isSelected() == true)
+        {
+            radioCustomer.setSelected(false);
         }
     }//GEN-LAST:event_radioSupplierActionPerformed
 
