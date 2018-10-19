@@ -108,7 +108,47 @@ public class LoginScreen extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        User selectedUser = (User)comboUser.getSelectedItem();
         
+        //System.out.println(selectedUser.equals(null));
+        /*if(selectedUser.equals(null))
+        {
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
+        }
+        else
+        {*/
+        try 
+        {
+            if(txtPword.getText().equals(null))
+            {
+                JOptionPane.showMessageDialog(null, "Please fill in Password");
+                initialize();
+            }
+            else
+            {         
+                if(txtPword.getText().equals(null))
+                {
+                    JOptionPane.showMessageDialog(null, "Please fill in Password");
+                    initialize();
+                }
+                else if(selectedUser.verify(txtPword.getText()))
+                {
+                    SuccessScreen successScreen = new SuccessScreen();
+                    panelRight.add("SuccessScreen", successScreen);
+                    CardLayout layout = (CardLayout) panelRight.getLayout();
+                    layout.next(panelRight);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Password Wrong!!");
+                    initialize();
+                }
+            }
+        } 
+        catch (NullPointerException e) 
+        {
+             JOptionPane.showMessageDialog(null, "Please select a Row!!");
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void comboUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUserActionPerformed
