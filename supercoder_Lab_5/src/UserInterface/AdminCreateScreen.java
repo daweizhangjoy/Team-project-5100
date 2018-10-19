@@ -6,6 +6,8 @@
 package UserInterface;
 
 import Business.Abstract.User;
+import Business.CustomerDirectory;
+import Business.SupplierDirectory;
 import Business.Users.Admin;
 import Business.Users.Customer;
 import Business.Users.Supplier;
@@ -20,6 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import java.util.regex.*;
 
 /**
  *
@@ -149,10 +152,46 @@ public class AdminCreateScreen extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        CardLayout layout = (CardLayout)panelRight.getLayout();
-        panelRight.add(this);
-        layout.next(panelRight);
-        
+        if(false == txtPword.getText().equals(txtRePword.getText()))
+        {
+            JOptionPane.showMessageDialog(null, "Please enter the same Password");
+        }
+        else
+        {
+            if(false == usernamePatternCorrect())
+            {
+                JOptionPane.showMessageDialog(null, "should be an email-ID with \"_\" and \"@\" as the only allowed special characters but should not start with an \"_\"");
+            }
+            else if(false == passwordPatternCorrect())
+            {
+                JOptionPane.showMessageDialog(null, "Password should contain alphanumeric characters with \"+_$\" being the allowed special characters.");
+            }
+            else if((radioCustomer.isSelected() || radioSupplier.isSelected()) == false)
+            {
+                JOptionPane.showMessageDialog(null, "Please select Customer or Supplier");
+            }
+            else
+            {
+                if(radioCustomer.isSelected()==true)
+                {
+                    CustomerDirectory customerDirectory = admin.getCustDir();
+                    
+                    Customer customer = new Customer(txtPword.getText(), txtUser.getText());
+                    customerDirectory.getCustomerList().add(customer);
+                }
+                else
+                {
+                    SupplierDirectory supplierDirectory = admin.getSuppDir();
+                    
+                    Supplier supplier = new Supplier(txtPword.getText(), txtUser.getText());
+                    supplierDirectory.getSupplierList().add(supplier);
+                }
+                
+                CardLayout layout = (CardLayout)panelRight.getLayout();
+                panelRight.add(new SuccessScreen());
+                layout.next(panelRight);
+            }
+        }
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void radioCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCustomerActionPerformed
@@ -211,4 +250,49 @@ public class AdminCreateScreen extends javax.swing.JPanel {
     private javax.swing.JTextField txtRePword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
+
+    private boolean passwordPatternCorrect() {
+        Pattern p = Pattern.compile("(A-Za-z0-9+_$)?");
+        Pattern p1 = Pattern.compile(".*_.*");
+        Pattern p2 = Pattern.compile(".*+.*");
+        Pattern p3 = Pattern.compile(".*$.*");
+        Matcher m = p.matcher(txtPword.getText());
+        Matcher m1 = p.matcher(txtPword.getText());
+        Matcher m2 = p.matcher(txtPword.getText());
+        Matcher m3 = p.matcher(txtPword.getText());
+        
+        boolean b = m.find();
+        boolean b1 = m1.find();
+        boolean b2 = m2.find();
+        boolean b3 = m3.find();
+        
+        if( ( b && (b1 || b2 ||b3) ) == false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private boolean usernamePatternCorrect() {
+        Pattern p = Pattern.compile("[^A-Za-z0-9@]");
+        Pattern p1 = Pattern.compile("(A-Za-z0-9@_)?");
+        
+        Matcher m = p.matcher(txtPword.getText());
+        Matcher m1 = p1.matcher(txtPword.getText());
+        
+        boolean b = m.find();
+        boolean b1 = m1.find();
+        
+        if((b && b1) == true)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

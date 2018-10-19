@@ -30,5 +30,10 @@ public class SupplierDirectory {
         this.supplierList = supplierList;
     }
     
-    
+     /*public Airplane addAirplane()
+    {
+        Airplane airplane = new Airplane();
+        airplanedirectory.add(airplane);
+        return airplane;
+    }*/
 }
