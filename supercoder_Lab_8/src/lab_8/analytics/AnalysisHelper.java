@@ -53,7 +53,8 @@ public class AnalysisHelper {
               maxId = id;
           }
       }
-    }
+      System.out.println("user with the most likes = "+ maxId);
+    }/*1107 缺少输出 可能以println的形式补完*/
     
     public void getFiveMostLikedComment()
     {
@@ -67,6 +68,19 @@ public class AnalysisHelper {
             return o2.getLikes() - o1.getLikes();
             }
         });
-    }
+    }/*1107 缺少输出 可能以println的形式补完*/
     
+    public void getAverageLikesOfAllComments()/*Find Average number of likes per comment*/
+    {
+        Map<Integer, Comment> comments = DataStore.getInstance().getComments();
+        int sum = 0;
+        int count = 0;
+        for(Comment c : comments.values())
+        {
+            sum += c.getLikes();
+            count ++;
+        }
+        
+        System.out.println("Average Likes of All Comments = "+ sum/count);
+    }
 }
