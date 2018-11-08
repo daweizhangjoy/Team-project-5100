@@ -90,7 +90,7 @@ public class DataGenerator {
         
     }
     
-    private void generateCommentColumns() throws IOException{
+    /*private void generateCommentColumns() throws IOException{
         int postId = 0;
         int postingUserId = rand.nextInt(postIdsRange);
         int commentId = 0;
@@ -113,6 +113,35 @@ public class DataGenerator {
             }
             
             postingUserId = rand.nextInt(postIdsRange);
+            postId++;
+        }
+        
+    }*/
+    
+    /*change in 1107, by hongbo jiang, slack中提出的修改，更正userIdsRange的作用于三处*/
+    private void generateCommentColumns() throws IOException{
+        int postId = 0;
+        int postingUserId = rand.nextInt(userIdsRange);
+        int commentId = 0;
+        //the loop for orders
+        while(postId < postIdsRange && commentId < commentIdsRange) {
+            int iterations = rand.nextInt(10);
+            
+            while(iterations > 0){
+                int likeCount = rand.nextInt(likeRange);
+                int commentingUserId = rand.nextInt(userIdsRange);
+                String comment = "Some Random Commen with Id "+commentId;
+                
+                String column = commentId+","+postId+","+postingUserId+","+likeCount+","+commentingUserId+","+comment;
+                
+                writer.append(column);
+                writer.append(LINE_BREAK);
+                
+                commentId++;
+                iterations--;
+            }
+            
+            postingUserId = rand.nextInt(userIdsRange);
             postId++;
         }
         
