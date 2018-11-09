@@ -146,6 +146,66 @@ public class AnalysisHelper {
             }
         });
     }
+
+    public void postWithMostComments()
+    { 
+        Map<Integer, Integer> postsCommentCount = new HashMap<>();
+        Map<Integer, Post> posts = DataStore.getInstance().getPosts();
+        for(Post post:posts.values())
+        {
+            int maxComment = 0;
+            if(postsCommentCount.containsKey(post.getPostId()))
+            {
+                maxComment = postsCommentCount.get(post.getPostId());
+            }
+            maxComment = post.getComments().size();
+            postsCommentCount.put(post.getPostId(),maxComment);
+        }
+        
+        int max = 0;
+        int maxId = 0;
+        for(int id : postsCommentCount.keySet())
+        {
+            if(postsCommentCount.get(id) > max)
+            {
+                max = postsCommentCount.get(id);
+                maxId = id;
+            }
+        }
+        
+        System.out.println("user with the most likes = "+ maxId);
+    }
+
+    /*
+    public void mostfiveinactiveusersbasedpost (){
+   
+//        Map<Integer, Post> posts = DataStore.getInstance().getPostId();
+//        List<Post> postList = new ArrayList<>(posts.values());
+        
+        Map<Integer, Integer> usersPostCount = new HashMap<>();
+        Map<Integer, Comment> comments = DataStore.getInstance().getComments();
+        
+        for(Comment comment: comments.values())
+        {
+            int postCount = 0;
+            if(usersPostCount.containsKey(comment.getUserId()))
+            {
+                postCount = usersPostCount.get(comment.getUserId());
+            }
+            
+            postCount ++;
+            usersPostCount.put(post.getPostId(), likes);
+            }
+        }
+        
+        Collections.sort(postList, new Comparator<Post>()         
+        {
+            @Override
+            public int compare(User o1, User o2) {
+            return o1.getUserId() - o2.getUserId();
+            }
+        });
+    }*/
 }
 
 
