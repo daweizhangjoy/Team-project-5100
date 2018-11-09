@@ -114,6 +114,34 @@ public class AnalysisHelper {
           }
       }
       System.out.println("post with the most likes = "+ maxId);
-    }/*1107 缺少输出 可能以println的形式补完*/
+    }
+    public void postWithMostComments()
+    { 
+        Map<Integer, Integer> postsCommentCount = new HashMap<>();
+        Map<Integer, Post> posts = DataStore.getInstance().getPosts();
+        for(Post post:posts.values())
+        {
+            int maxComment = 0;
+            if(postsCommentCount.containsKey(post.getPostId()))
+            {
+                maxComment = postsCommentCount.get(post.getPostId());
+            }
+            maxComment = post.getComments().size();
+            postsCommentCount.put(post.getPostId(),maxComment);
+        }
+        
+        int max = 0;
+        int maxId = 0;
+        for(int id : postsCommentCount.keySet())
+        {
+            if(postsCommentCount.get(id) > max)
+            {
+                max = postsCommentCount.get(id);
+                maxId = id;
+            }
+        }
+        
+        System.out.println("user with the most likes = "+ maxId);
+    }
 }
 
