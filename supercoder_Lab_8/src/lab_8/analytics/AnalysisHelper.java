@@ -84,7 +84,7 @@ public class AnalysisHelper {
         System.out.println("Average Likes of All Comments = "+ sum/count);
     }
     
-    public void postWithMostLikes() /*这是新的名字*/
+    public void postWithMostLikedComment() /*Post with most liked comments*/
     {
         Map<Integer, Integer> postsLikecount = new HashMap<>();
         Map<Integer, Post> posts = DataStore.getInstance().getPosts();
@@ -114,40 +114,9 @@ public class AnalysisHelper {
           }
       }
       System.out.println("post with the most likes = "+ maxId);
-    }/*1107 缺少输出 可能以println的形式补完*/
-    
-    public void mostfiveinactiveusersbasedpost (){
-   
-//        Map<Integer, Post> posts = DataStore.getInstance().getPostId();
-//        List<Post> postList = new ArrayList<>(posts.values());
-        
-        Map<Integer, Integer> usersPostCount = new HashMap<>();
-        Map<Integer, Comment> comments = DataStore.getInstance().getComments();
-        
-        for(Comment comment: comments.values())
-        {
-            int postCount = 0;
-            if(postsLikecount.containsKey(post.getPostId()))
-            {
-                likes = postsLikecount.get(post.getPostId());
-            }
-            
-            likes += c.getLikes();
-            postsLikecount.put(post.getPostId(), likes);
-            }
-        }
-        
-        Collections.sort(postList, new Comparator<Post>() 
-                
-        {
-            @Override
-            public int compare(User o1, User o2) {
-            return o1.getUserId() - o2.getUserId();
-            }
-        });
     }
-
-    public void postWithMostComments()
+    
+    public void postWithMostComments() /*Post with most comments.*/
     { 
         Map<Integer, Integer> postsCommentCount = new HashMap<>();
         Map<Integer, Post> posts = DataStore.getInstance().getPosts();
@@ -175,6 +144,39 @@ public class AnalysisHelper {
         
         System.out.println("user with the most likes = "+ maxId);
     }
+    
+    public void mostfiveinactiveusersbasedpost (){
+   
+//        Map<Integer, Post> posts = DataStore.getInstance().getPostId();
+//        List<Post> postList = new ArrayList<>(posts.values());
+        
+        Map<Integer, Integer> usersPostCount = new HashMap<>();
+        Map<Integer, Comment> comments = DataStore.getInstance().getComments();
+        
+        for(Comment comment: comments.values())
+        {
+            int postCount = 0;
+            
+            if(usersPostCount.containsKey(post.getPostId()))
+            {
+                likes = postsLikecount.get(post.getPostId());
+            }
+            
+            likes += c.getLikes();
+            postsLikecount.put(post.getPostId(), likes);
+            }
+        }
+        
+        Collections.sort(postList, new Comparator<Post>()             
+        {
+            @Override
+            public int compare(User o1, User o2) {
+            return o1.getUserId() - o2.getUserId();
+            }
+        });
+    }
+
+    
 
     /*
     public void mostfiveinactiveusersbasedpost (){
