@@ -83,4 +83,37 @@ public class AnalysisHelper {
         
         System.out.println("Average Likes of All Comments = "+ sum/count);
     }
+    
+    public void postWithMostLikes() /*这是新的名字*/
+    {
+        Map<Integer, Integer> postsLikecount = new HashMap<>();
+        Map<Integer, Post> posts = DataStore.getInstance().getPosts();
+        
+        for(Post post:posts.values())
+        {
+            for(Comment c : post.getComments())
+            {
+                int likes = 0;
+                if(postsLikecount.containsKey(post.getPostId()))
+                {
+                    likes = postsLikecount.get(post.getPostId());
+                }
+                likes += c.getLikes();
+                postsLikecount.put(post.getPostId(), likes);
+            }
+        }
+        
+      int max = 0;
+      int maxId = 0;
+      for(int id : postsLikecount.keySet())
+      {
+          if(postsLikecount.get(id) > max)
+          {
+              max = postsLikecount.get(id);
+              maxId = id;
+          }
+      }
+      System.out.println("post with the most likes = "+ maxId);
+    }/*1107 缺少输出 可能以println的形式补完*/
 }
+

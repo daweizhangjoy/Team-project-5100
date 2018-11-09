@@ -88,6 +88,7 @@ public class Lab_8 {
         helper.userWithMostLikes();
         helper.getFiveMostLikedComment();
         helper.getAverageLikesOfAllComments();
+        helper.postWithMostLikes();
     }
     
 }
