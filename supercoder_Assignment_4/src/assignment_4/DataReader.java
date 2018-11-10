@@ -45,9 +45,9 @@ public class DataReader {
             if((line = reader.readLine()) != null){
                 String[] rows = line.split(",");
                 return rows;
-            }
-            return null;
+            }   
         }
+        return null;
     }
     
 }

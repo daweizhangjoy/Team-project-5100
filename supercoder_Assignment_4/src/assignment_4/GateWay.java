@@ -6,6 +6,11 @@
 package assignment_4;
 
 import java.io.IOException;
+import java.util.Map;
+import assignment_4.analytics.AnalysisHelper;
+import assignment_4.analytics.DataStore;
+import assignment_4.entities.Order;
+import assignment_4.entities.Product;
 
 /**
  *
@@ -13,7 +18,7 @@ import java.io.IOException;
  */
 public class GateWay {
     
-    public static void main(String args[]) throws IOException{
+    /*public static void main(String args[]) throws IOException{
         
         DataGenerator generator = DataGenerator.getInstance();
         
@@ -40,6 +45,66 @@ public class GateWay {
             System.out.print(row1 + ", ");
         }
         System.out.println("");
+    }*/
+    
+    DataReader orderReader;
+    DataReader productReader;
+    AnalysisHelper helper;
+    
+    public GateWay() throws IOException {
+        DataGenerator generator = DataGenerator.getInstance();
+        orderReader = new DataReader(generator.getOrderFilePath());
+        productReader = new DataReader(generator.getProductCataloguePath());
+        helper = new AnalysisHelper();
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {     
+        GateWay inst = new GateWay();
+        inst.readData();
+    }
+    
+    private void readData() throws IOException{
+        String[] row;
+        while((row = orderReader.getNextRow()) != null ){
+            generateOrder(row);
+        }
+        while((row = productReader.getNextRow()) != null ){
+            generateProduct(row);
+        }
+        
+        runAnalysis();
+    }
+    
+    private void generateOrder(String[] row)
+    {
+        int orderId = Integer.parseInt(row[0]);
+        User u = new User(userId, row[1], row[2]);
+        DataStore.getInstance().getUsers().put(userId,u);
+    }
+    
+    private void generateProduct(String[] row)
+    {
+        int userId = Integer.parseInt(row[0]);
+        User u = new User(userId, row[1], row[2]);
+        DataStore.getInstance().getUsers().put(userId,u);
+    }
+    
+
+    
+    private void runAnalysis(){
+        helper.userWithMostLikes();
+        helper.getFiveMostLikedComment();
+        
+        helper.getAverageLikesOfAllComments();
+        helper.postWithMostLikedComment();
+        helper.postWithMostComments();
+        helper.mostFiveInactiveUsersBasedOnPost();
+        helper.mostFiveInactiveUsersBasedOnComment();
+        helper.mostFiveInactiveUsersOverall();
+        helper.mostFiveProactiveUsersOverall();
     }
     
 }

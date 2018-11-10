@@ -7,9 +7,8 @@ package assignment_4.analytics;
 
 import java.util.HashMap;
 import java.util.Map;
-import lab_8.entities.Comment;
-import lab_8.entities.Post;
-import lab_8.entities.User;
+import assignment_4.entities.Order;
+import assignment_4.entities.Product;
 
 /**
  *
@@ -19,14 +18,12 @@ public class DataStore {
     
     private static DataStore dataStore;
     
-    private Map<Integer, User> users;
-    private Map<Integer, Post> posts;
-    private Map<Integer, Comment> comments;
+    private Map<Integer, Order> orders;
+    private Map<Integer, Product> products;
     
     private DataStore(){
-        users = new HashMap<>();
-        posts = new HashMap<>();
-        comments = new HashMap<>();
+        orders = new HashMap<>();
+        products = new HashMap<>();
     }
     
     public static DataStore getInstance(){
@@ -43,28 +40,19 @@ public class DataStore {
         DataStore.dataStore = dataStore;
     }
 
-    public Map<Integer, User> getUsers() {
-        return users;
+    public Map<Integer, Order> getOrders() {
+        return orders;
     }
 
-    public void setUsers(Map<Integer, User> users) {
-        this.users = users;
+    public void setOrders(Map<Integer, Order> orders) {
+        this.orders = orders;
     }
 
-    public Map<Integer, Post> getPosts() {
-        return posts;
+    public Map<Integer, Product> getProducts() {
+        return products;
     }
 
-    public void setPosts(Map<Integer, Post> posts) {
-        this.posts = posts;
+    public void setProducts(Map<Integer, Product> products) {
+        this.products = products;
     }
-
-    public Map<Integer, Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Map<Integer, Comment> comments) {
-        this.comments = comments;
-    }
-
 }
