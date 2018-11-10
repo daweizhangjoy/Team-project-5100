@@ -95,16 +95,7 @@ public class GateWay {
 
     
     private void runAnalysis(){
-        helper.userWithMostLikes();
-        helper.getFiveMostLikedComment();
         
-        helper.getAverageLikesOfAllComments();
-        helper.postWithMostLikedComment();
-        helper.postWithMostComments();
-        helper.mostFiveInactiveUsersBasedOnPost();
-        helper.mostFiveInactiveUsersBasedOnComment();
-        helper.mostFiveInactiveUsersOverall();
-        helper.mostFiveProactiveUsersOverall();
     }
     
 }
