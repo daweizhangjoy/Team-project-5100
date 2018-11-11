@@ -43,19 +43,19 @@ public class AnalysisHelper {
             }
         }
         
-      int max = 0;
-      int maxId = 0;
-      for(int id : userLikecount.keySet())
-      {
-          if(userLikecount.get(id) > max)
-          {
-              max = userLikecount.get(id);
-              maxId = id;
-          }
-      }
-      System.out.print("\n");
-      System.out.println("user with the most likes = "+ maxId);
-      System.out.print("\n");
+        int max = 0;
+        int maxId = 0;
+        for(int id : userLikecount.keySet())
+        {
+            if(userLikecount.get(id) > max)
+            {
+                max = userLikecount.get(id);
+                maxId = id;
+            }
+        }
+        System.out.print("\n");
+        System.out.println("user with the most likes = "+ maxId);
+        System.out.print("\n");
     }/*1107 缺少输出 可能以println的形式补完*/
     
     public void getFiveMostLikedComment()

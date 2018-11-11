@@ -103,7 +103,10 @@ public class GateWay {
 
     
     private void runAnalysis(){
-        
+        helper.topThreeMostPopularProductSortedFromHighToLow();
+        helper.topThreeBestCustomers();
+        helper.topThreeBestSalesPeople();
+        helper.totalRevenue();
     }
     
 }
