@@ -11,15 +11,15 @@ package assignment_4.entities;
  */
 public class Order {
     private int orderId;
-    private int supplierId;
+    private int salesId;
     private int customerId;
     private int productId;
     private int salesPrice;
     private int quantity;
 
-    public Order(int orderId, int supplierId, int customerId, int productId, int salesPrice, int quantity) {
+    public Order(int orderId, int salesId, int customerId, int productId, int salesPrice, int quantity) {
         this.orderId = orderId;
-        this.supplierId = supplierId;
+        this.salesId = salesId;
         this.customerId = customerId;
         this.productId = productId;
         this.salesPrice = salesPrice;
@@ -34,12 +34,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public int getSupplierId() {
-        return supplierId;
+    public int getSalesId() {
+        return salesId;
     }
 
-    public void setSupplierId(int supplierId) {
-        this.supplierId = supplierId;
+    public void setSalesId(int salesId) {
+        this.salesId = salesId;
     }
 
     public int getCustomerId() {

@@ -12,6 +12,11 @@ package assignment_4.entities;
 public class Product {
     private int product_Id;
     private int target_Price;
+    
+    public Product(int product_Id, int target_Price) {
+        this.product_Id = product_Id;
+        this.target_Price = target_Price;
+    }
 
     public int getProduct_Id() {
         return product_Id;

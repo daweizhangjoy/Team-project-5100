@@ -81,15 +81,23 @@ public class GateWay {
     private void generateOrder(String[] row)
     {
         int orderId = Integer.parseInt(row[0]);
-        User u = new User(userId, row[1], row[2]);
-        DataStore.getInstance().getUsers().put(userId,u);
+        int salesId = Integer.parseInt(row[4]);
+        int customerId = Integer.parseInt(row[5]);
+        int productId = Integer.parseInt(row[2]);
+        int salesPrice = Integer.parseInt(row[6]);
+        int quantity = Integer.parseInt(row[3]);
+        
+        Order u = new Order(orderId, salesId, customerId, productId, salesPrice, quantity);
+        DataStore.getInstance().getOrders().put(orderId,u);
     }
     
     private void generateProduct(String[] row)
     {
-        int userId = Integer.parseInt(row[0]);
-        User u = new User(userId, row[1], row[2]);
-        DataStore.getInstance().getUsers().put(userId,u);
+        int product_Id = Integer.parseInt(row[0]);
+        int target_Price = Integer.parseInt(row[3]);
+        
+        Product u = new Product(product_Id, target_Price);
+        DataStore.getInstance().getProducts().put(product_Id,u);
     }
     
 
