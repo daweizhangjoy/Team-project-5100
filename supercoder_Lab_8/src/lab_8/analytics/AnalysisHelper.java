@@ -150,15 +150,12 @@ public class AnalysisHelper {
         System.out.print("\n");
     }
     
-    public void mostFiveInactiveUsersBasedOnPost ()/*Top 5 inactive users based on posts*/
-    {
-   
-//        Map<Integer, Post> posts = DataStore.getInstance().getPostId();
-//        List<Post> postList = new ArrayList<>(posts.values());
+      public void mostFiveInactiveUsersBasedOnPost ()
+        {
         Map<Integer, Integer> usersPostCount = new HashMap<>();
         Map<Integer, Post> posts = DataStore.getInstance().getPosts();
         
-        for(Post post: posts.values())
+          for(Post post: posts.values())
         {
             int postCount = 0;
             
@@ -170,13 +167,7 @@ public class AnalysisHelper {
             usersPostCount.put(post.getUserId(), postCount);
         }
         
-        /*Collections.sort(usersPostCount, new Comparator<Post>()             
-        {
-            @Override
-            public int compare(User o1, User o2) {
-            return o1.getUserId() - o2.getUserId();
-            }
-        });*/
+       
         
         List<Map.Entry<Integer, Integer>> infoIds = new ArrayList<Map.Entry<Integer, Integer>>(usersPostCount.entrySet());
         Collections.sort(infoIds, new Comparator<Map.Entry<Integer, Integer>>() 
@@ -199,8 +190,6 @@ public class AnalysisHelper {
     public void mostFiveInactiveUsersBasedOnComment ()/*Top 5 inactive users based on comments*/
     {
    
-//        Map<Integer, Post> posts = DataStore.getInstance().getPostId();
-//        List<Post> postList = new ArrayList<>(posts.values());
         Map<Integer, Integer> usersCommentCount = new HashMap<>();
         Map<Integer, Comment> comments = DataStore.getInstance().getComments();
         
