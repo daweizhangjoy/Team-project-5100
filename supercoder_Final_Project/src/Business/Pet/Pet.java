@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Business.Pet;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class DataStore {
+public class Pet {
     
 }
