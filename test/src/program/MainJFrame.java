@@ -2,14 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface;
+package program;
 
-import Business.EcoSystem;
-import Business.DB4OUtil.DB4OUtil;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+//import Business.EcoSystem;
+//import Business.DB4OUtil.DB4OUtil;
+//import Business.Enterprise.Enterprise;
+//import Business.Network.Network;
+//import Business.Organization.Organization;
+//import Business.UserAccount.UserAccount;
+import data.Data;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -23,11 +24,14 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private EcoSystem system;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+//    private EcoSystem system;
+//    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
+    private Data data;
 
     public MainJFrame() {
         initComponents();
+        data = new Data();
         //system = dB4OUtil.retrieveSystem();
         //this.setSize(1680, 1050);
     }
@@ -53,6 +57,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.CardLayout());
 
         loginJButton.setText("Login");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +120,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(logoutJButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginJLabel)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(471, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -123,87 +128,48 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(container);
 
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jSplitPane1, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        // Get user name
-        String userName = userNameJTextField.getText();
-        // Get Password
-        char[] passwordCharArray = passwordField.getPassword();
-        String password = String.valueOf(passwordCharArray);
+
+//        if(userNameJTextField.getText().equals("1") == true)
+//        {
+            program.CreateDrivingJPanel createDrivingJPanel;
+            createDrivingJPanel = new program.CreateDrivingJPanel(container, data);
         
-        //Step1: Check in the system admin user account directory if you have the user
-        UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
-        
-        Enterprise inEnterprise=null;
-        Organization inOrganization=null;
-        
-        if(userAccount==null){
-            //Step 2: Go inside each network and check each enterprise
-            for(Network network:system.getNetworkList()){
-                //Step 2.a: check against each enterprise
-                for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
-                    userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
-                    if(userAccount==null){
-                       //Step 3:check against each organization for each enterprise
-                       for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList()){
-                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
-                           if(userAccount!=null){
-                               inEnterprise=enterprise;
-                               inOrganization=organization;
-                               break;
-                           }
-                       }
-                        
-                    }
-                    else{
-                       inEnterprise=enterprise;
-                       break;
-                    }
-                    if(inOrganization!=null){
-                        break;
-                    }  
-                }
-                if(inEnterprise!=null){
-                    break;
-                }
-            }
-        }
-        
-        if(userAccount==null){
-            JOptionPane.showMessageDialog(null, "Invalid credentials");
-            return;
-        }
-        else{
-            CardLayout layout=(CardLayout)container.getLayout();
-            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+            container.add("CreateDrivingJPanel",createDrivingJPanel);        
+            CardLayout layout = (CardLayout) container.getLayout();
             layout.next(container);
-        }
-        
-        loginJButton.setEnabled(false);
-        logoutJButton.setEnabled(true);
-        userNameJTextField.setEnabled(false);
-        passwordField.setEnabled(false);
+//        }
+//        else if(userNameJTextField.getText().equals("2") == true)
+//        {
+//            program.BBBBB createDrivingJPanel1;
+//            createDrivingJPanel1 = new program.BBBBB(container, data);
+//        
+//            container.add("CreateDrivingJPanel1",createDrivingJPanel1);        
+//            CardLayout layout = (CardLayout) container.getLayout();
+//            layout.next(container);
+//        }
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
-        logoutJButton.setEnabled(false);
-        userNameJTextField.setEnabled(true);
-        passwordField.setEnabled(true);
-        loginJButton.setEnabled(true);
-
-        userNameJTextField.setText("");
-        passwordField.setText("");
-
-        container.removeAll();
-        JPanel blankJP = new JPanel();
-        container.add("blank", blankJP);
-        CardLayout crdLyt = (CardLayout) container.getLayout();
-        crdLyt.next(container);
-        dB4OUtil.storeSystem(system);
+//        logoutJButton.setEnabled(false);
+//        userNameJTextField.setEnabled(true);
+//        passwordField.setEnabled(true);
+//        loginJButton.setEnabled(true);
+//
+//        userNameJTextField.setText("");
+//        passwordField.setText("");
+//
+//        container.removeAll();
+//        JPanel blankJP = new JPanel();
+//        container.add("blank", blankJP);
+//        CardLayout crdLyt = (CardLayout) container.getLayout();
+//        crdLyt.next(container);
+//        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     private void userNameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameJTextFieldActionPerformed
