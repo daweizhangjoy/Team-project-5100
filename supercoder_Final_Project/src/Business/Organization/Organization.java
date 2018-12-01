@@ -63,16 +63,8 @@ public abstract class Organization {
         return name;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
     }
 
     @Override
