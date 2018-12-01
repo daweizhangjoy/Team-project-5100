@@ -24,7 +24,7 @@ public class PetKeepWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     public PetKeepWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        initComponents();
     }
 
     /**

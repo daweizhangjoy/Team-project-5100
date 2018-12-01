@@ -5,10 +5,28 @@
  */
 package Business.Pet;
 
+import Business.Employee.Employee;
+import java.util.ArrayList;
+
 /**
  *
  * @author 15142087777的AW
  */
 public class PetDirectory {
+    private ArrayList<Employee> employeeList;
+
+    public PetDirectory() {
+        employeeList = new ArrayList();
+    }
+
+    public ArrayList<Employee> getEmployeeList() {
+        return employeeList;
+    }
     
+    public Employee createEmployee(String name){
+        Employee employee = new Employee();
+        employee.setName(name);
+        employeeList.add(employee);
+        return employee;
+    }
 }

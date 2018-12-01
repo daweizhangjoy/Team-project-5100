@@ -30,6 +30,8 @@ public class HospitalMainJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -37,10 +39,16 @@ public class HospitalMainJPanel extends javax.swing.JPanel {
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jButton1.setText("Customer");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 190, 70));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 190, 40));
 
         jButton3.setText("Admin");
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 190, 70));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 190, 40));
+
+        jButton4.setText("Pet Keep");
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 190, 40));
+
+        jButton5.setText("Admin");
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 40));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -48,5 +56,7 @@ public class HospitalMainJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     // End of variables declaration//GEN-END:variables
 }
