@@ -5,6 +5,11 @@
  */
 package interface1.supply.supplyIncomeRole;
 
+import Business.Communal_UserAccount.UserAccount;
+import Business.EcoSystem;
+import Business.Organization.Organization;
+import javax.swing.JPanel;
+
 /**
  *
  * @author 15142087777的AW
@@ -16,6 +21,10 @@ public class SupplyIncomeJPanel extends javax.swing.JPanel {
      */
     public SupplyIncomeJPanel() {
         initComponents();
+    }
+
+    public SupplyIncomeJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
