@@ -5,7 +5,6 @@
  */
 package Business.Communal_TotalSupply;
 
-import Business.Communal_Customer.*;
 import Business.Communal_Pet.PetDirectory;
 
 /**
@@ -13,33 +12,38 @@ import Business.Communal_Pet.PetDirectory;
  * @author 15142087777的AW
  */
 public class TotalSupply {
-    private String name;
-    private int id;
+    private String supplyName;
+    private int supplyQuantity;
+    private int supplyId;
     private static int count = 1;
-    private PetDirectory petDirectory;
 
     public TotalSupply() {
-        id = count;
+        supplyId = count;
         count++;
-        petDirectory = new PetDirectory();
     }
 
-    public int getId() {
-        return id;
+    public String getSupplyName() {
+        return supplyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSupplyName(String supplyName) {
+        this.supplyName = supplyName;
     }
 
-    
-    public String getName() {
-        return name;
+    public int getSupplyQuantity() {
+        return supplyQuantity;
     }
 
-    @Override
-    public String toString() {
-        return name;
+    public void setSupplyQuantity(int supplyQuantity) {
+        this.supplyQuantity = supplyQuantity;
+    }
+
+    public int getSupplyId() {
+        return supplyId;
+    }
+
+    public void setSupplyId(int supplyId) {
+        this.supplyId = supplyId;
     }
 
     public static int getCount() {
@@ -50,13 +54,9 @@ public class TotalSupply {
         TotalSupply.count = count;
     }
 
-    public PetDirectory getPetDirectory() {
-        return petDirectory;
+    @Override
+    public String toString() {
+        return supplyName.concat("*" + Integer.toString(supplyQuantity));
     }
-
-    public void setPetDirectory(PetDirectory petDirectory) {
-        this.petDirectory = petDirectory;
-    }
-    
     
 }

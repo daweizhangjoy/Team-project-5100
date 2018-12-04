@@ -7,7 +7,7 @@ package Business.Organization.Shelter;
 
 import Business.Organization.Organization;
 import Business.Role.Role;
-import Business.Role.ShelterPetKeeper;
+import Business.Role.ShelterPetKeeperRole;
 import java.util.ArrayList;
 /**
  *
@@ -22,7 +22,7 @@ public class ShelterPetKeepOrganization extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new ShelterPetKeeper());
+        roles.add(new ShelterPetKeeperRole());
         return roles;
     }
     

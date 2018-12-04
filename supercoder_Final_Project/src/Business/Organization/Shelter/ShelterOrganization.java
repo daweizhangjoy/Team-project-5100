@@ -5,9 +5,10 @@
 package Business.Organization.Shelter;
 
 import Business.Organization.*;
-import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
-import Business.UserAccount.UserAccountDirectory;
+import Business.Shelter_Employee.EmployeeDirectory;
+import Business.Shelter_TotalSupply.TotalSupplyDirectory;
+import Business.Shelter_UserAccount.UserAccountDirectory;
 //import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
@@ -15,63 +16,41 @@ import java.util.ArrayList;
  *
  * @author raunak
  */
-public abstract class ShelterOrganization {
-
-    private String name;
-    //private WorkQueue workQueue;
-    private EmployeeDirectory employeeDirectory;
-    private UserAccountDirectory userAccountDirectory;
-    private int organizationID;
-    private static int counter=0;
+public abstract class ShelterOrganization extends Organization{
     
-    public enum Type{
-        HospitalHRAdmin("HRAdmin Organization"), HospitalMonitor("HospitalMonitor Organization"), HospitalPatient("HospitalPatient Organization"), HospitalSupplyManage("HospitalSupplyManage Organization"), 
-        ShelterAdopt("ShelterAdopt Organization"), ShelterMonitor("ShelterMonitor Organization"), ShelterPetKeep("ShelterPetKeep Organization"), ShelterSupplyManage("ShelterSupplyManage Organization"), 
-        SupplyIncome("SupplyIncome Organization"), SupplyOutcome("SupplyOutcome Organization");
-        private String value;
-        private Type(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
-
+    private EmployeeDirectory shelterEmployeeDirectory;
+    private TotalSupplyDirectory shelterTotalSupplyDirectory;
+    private UserAccountDirectory shelterUserAccountDirectory;
+    
+    
     public ShelterOrganization(String name) {
-        this.name = name;
-        //workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        organizationID = counter;
-        ++counter;
+        super(name);
+        shelterEmployeeDirectory = new EmployeeDirectory();
+        shelterTotalSupplyDirectory = new TotalSupplyDirectory();
+        shelterUserAccountDirectory = new UserAccountDirectory();
     }
 
-    public abstract ArrayList<Role> getSupportedRole();
-    
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
+    public EmployeeDirectory getShelterEmployeeDirectory() {
+        return shelterEmployeeDirectory;
     }
 
-    public int getOrganizationID() {
-        return organizationID;
+    public void setShelterEmployeeDirectory(EmployeeDirectory shelterEmployeeDirectory) {
+        this.shelterEmployeeDirectory = shelterEmployeeDirectory;
     }
 
-    public EmployeeDirectory getEmployeeDirectory() {
-        return employeeDirectory;
-    }
-    
-    public String getName() {
-        return name;
+    public TotalSupplyDirectory getShelterTotalSupplyDirectory() {
+        return shelterTotalSupplyDirectory;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setShelterTotalSupplyDirectory(TotalSupplyDirectory shelterTotalSupplyDirectory) {
+        this.shelterTotalSupplyDirectory = shelterTotalSupplyDirectory;
     }
 
-    @Override
-    public String toString() {
-        return name;
+    public UserAccountDirectory getShelterUserAccountDirectory() {
+        return shelterUserAccountDirectory;
     }
-    
-    
+
+    public void setShelterUserAccountDirectory(UserAccountDirectory shelterUserAccountDirectory) {
+        this.shelterUserAccountDirectory = shelterUserAccountDirectory;
+    }
 }

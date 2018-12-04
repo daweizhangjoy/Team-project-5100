@@ -7,7 +7,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import Business.Overall_UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**
@@ -17,9 +17,9 @@ import javax.swing.JPanel;
 public abstract class Role {
     
     public enum RoleType{
-        HospitalHRAdmin("HRAdmin"), HospitalMonitor("HospitalMonitor"), HospitalPatient("HospitalPatient"), HospitalSupplyManage("HospitalSupplyManage"), 
-        ShelterAdopt("ShelterAdopt"), ShelterMonitor("ShelterMonitor"), ShelterPetKeep("ShelterPetKeep"), ShelterSupplyManage("ShelterSupplyManage"), 
-        SupplyIncome("SupplyIncome"), SupplyOutcome("SupplyOutcome");
+        HospitalHRAdmin("HospitalHRAdmin"), HospitalAdmin("HospitalAdmin"), HospitalPatient("HospitalPatient"), HospitalSupplyManage("HospitalSupplyManage"), 
+        ShelterAdopt("ShelterAdopt"), ShelterAdmin("ShelterAdmin"), ShelterPetKeep("ShelterPetKeep"), ShelterSupplyManage("ShelterSupplyManage"), 
+        SupplyIncome("SupplyIncome"), SupplyOutcome("SupplyOutcome"), SupplyAdmin("SupplyAdmin");
         
         private String value;
         private RoleType(String value){

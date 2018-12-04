@@ -8,7 +8,7 @@ package Business.Organization.Shelter;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.ShelterAdoptAdmin;
-import Business.Role.ShelterPetKeeper;
+import Business.Role.ShelterPetKeeperRole;
 import java.util.ArrayList;
 /**
  *

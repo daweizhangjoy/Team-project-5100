@@ -23,7 +23,7 @@ public class SupplyIncomeOrganization extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-//        roles.add(new AdminRole());
+        roles.add(new AdminRole());
         return roles;
     }
     

@@ -5,16 +5,15 @@
 package Business.Organization;
 
 import Business.Organization.Hospital.HospitalHRAdminOrganization;
-import Business.Organization.Hospital.HospitalMonitorOrganization;
+import Business.Organization.Hospital.HospitalAdminOrganization;
 import Business.Organization.Hospital.HospitalPatientAdminOrganization;
 import Business.Organization.Hospital.HospitalSupplyManageOrganization;
 import Business.Organization.Organization.Type;
-import static Business.Organization.Organization.Type.HospitalHRAdmin;
-import static Business.Organization.Organization.Type.HospitalMonitor;
 import Business.Organization.Shelter.ShelterAdoptOrganization;
-import Business.Organization.Shelter.ShelterMonitorOrganization;
+import Business.Organization.Shelter.ShelterAdminOrganization;
 import Business.Organization.Shelter.ShelterPetKeepOrganization;
 import Business.Organization.Shelter.ShelterSupplyManageOrganization;
+import Business.Organization.Supply.SupplyAdminOrganization;
 import Business.Organization.Supply.SupplyIncomeOrganization;
 import Business.Organization.Supply.SupplyOutcomeOrganization;
 import java.util.ArrayList;
@@ -44,9 +43,9 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
         
-        else if (type.getValue().equals(Type.HospitalMonitor.getValue()))
+        else if (type.getValue().equals(Type.HospitalAdmin.getValue()))
         {
-            organization = new HospitalMonitorOrganization();
+            organization = new HospitalAdminOrganization();
             organizationList.add(organization);
         }
         
@@ -68,9 +67,9 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
         
-        else if (type.getValue().equals(Type.ShelterMonitor.getValue()))
+        else if (type.getValue().equals(Type.ShelterAdmin.getValue()))
         {
-            organization = new ShelterMonitorOrganization();
+            organization = new ShelterAdminOrganization();
             organizationList.add(organization);
         }
         
@@ -95,6 +94,12 @@ public class OrganizationDirectory {
         else if (type.getValue().equals(Type.SupplyOutcome.getValue()))
         {
             organization = new SupplyOutcomeOrganization();
+            organizationList.add(organization);
+        }
+        
+        else if (type.getValue().equals(Type.SupplyAdmin.getValue()))
+        {
+            organization = new SupplyAdminOrganization();
             organizationList.add(organization);
         }
         

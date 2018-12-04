@@ -4,10 +4,13 @@
  */
 package Business.Organization;
 
+import Business.Communal_Communal_PurchaseRequest.PurchaseRequestDirectory;
 import Business.Communal_Customer.CustomerDirectory;
-import Business.Employee.EmployeeDirectory;
+import Business.Communal_Pet.PetDirectory;
+import Business.Communal_PetCase.PetCaseDirectory;
+import Business.Communal_TotalSupply.TotalSupplyDirectory;
 import Business.Role.Role;
-import Business.UserAccount.UserAccountDirectory;
+
 //import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
@@ -18,18 +21,20 @@ import java.util.ArrayList;
 public abstract class Organization {
 
     private String name;
-    //private WorkQueue workQueue;
-    private EmployeeDirectory employeeDirectory;
-    private UserAccountDirectory userAccountDirectory;
+
     private CustomerDirectory customerDirectory;
-    
+    private PurchaseRequestDirectory purchaseRequestDirectory;
+    private PetDirectory petDirectory;
+    private PetCaseDirectory petCaseDirectory;
+    private TotalSupplyDirectory totalSupplyDirectory;
+     
     private int organizationID;
     private static int counter=0;
     
     public enum Type{
-        HospitalHRAdmin("HRAdmin Organization"), HospitalMonitor("HospitalMonitor Organization"), HospitalPatient("HospitalPatient Organization"), HospitalSupplyManage("HospitalSupplyManage Organization"), 
-        ShelterAdopt("ShelterAdopt Organization"), ShelterMonitor("ShelterMonitor Organization"), ShelterPetKeep("ShelterPetKeep Organization"), ShelterSupplyManage("ShelterSupplyManage Organization"), 
-        SupplyIncome("SupplyIncome Organization"), SupplyOutcome("SupplyOutcome Organization");
+        HospitalHRAdmin("HRAdmin Organization"), HospitalAdmin("HospitalAdmin Organization"), HospitalPatient("HospitalPatient Organization"), HospitalSupplyManage("HospitalSupplyManage Organization"), 
+        ShelterAdopt("ShelterAdopt Organization"), ShelterAdmin("ShelterAdmin Organization"), ShelterPetKeep("ShelterPetKeep Organization"), ShelterSupplyManage("ShelterSupplyManage Organization"), 
+        SupplyIncome("SupplyIncome Organization"), SupplyOutcome("SupplyOutcome Organization"), SupplyAdmin("SupplyAdmin Organization");
         private String value;
         private Type(String value) {
             this.value = value;
@@ -41,27 +46,19 @@ public abstract class Organization {
 
     public Organization(String name) {
         this.name = name;
-        //workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
-        userAccountDirectory = new UserAccountDirectory();
+
+        customerDirectory = new CustomerDirectory();
+        purchaseRequestDirectory = new PurchaseRequestDirectory();
+        petDirectory = new PetDirectory();
+        petCaseDirectory = new PetCaseDirectory();
+        totalSupplyDirectory = new TotalSupplyDirectory();
+        
         organizationID = counter;
         ++counter;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
-    
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
-    }
 
-    public int getOrganizationID() {
-        return organizationID;
-    }
-
-    public EmployeeDirectory getEmployeeDirectory() {
-        return employeeDirectory;
-    }
-    
     public String getName() {
         return name;
     }
@@ -69,6 +66,64 @@ public abstract class Organization {
     public void setName(String name) {
         this.name = name;
     }
+
+    public CustomerDirectory getCustomerDirectory() {
+        return customerDirectory;
+    }
+
+    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+        this.customerDirectory = customerDirectory;
+    }
+
+    public PurchaseRequestDirectory getPurchaseRequestDirectory() {
+        return purchaseRequestDirectory;
+    }
+
+    public void setPurchaseRequestDirectory(PurchaseRequestDirectory purchaseRequestDirectory) {
+        this.purchaseRequestDirectory = purchaseRequestDirectory;
+    }
+
+    public PetDirectory getPetDirectory() {
+        return petDirectory;
+    }
+
+    public void setPetDirectory(PetDirectory petDirectory) {
+        this.petDirectory = petDirectory;
+    }
+
+    public PetCaseDirectory getPetCaseDirectory() {
+        return petCaseDirectory;
+    }
+
+    public void setPetCaseDirectory(PetCaseDirectory petCaseDirectory) {
+        this.petCaseDirectory = petCaseDirectory;
+    }
+
+    public TotalSupplyDirectory getTotalSupplyDirectory() {
+        return totalSupplyDirectory;
+    }
+
+    public void setTotalSupplyDirectory(TotalSupplyDirectory totalSupplyDirectory) {
+        this.totalSupplyDirectory = totalSupplyDirectory;
+    }
+
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public void setOrganizationID(int organizationID) {
+        this.organizationID = organizationID;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Organization.counter = counter;
+    }
+    
+    
 
     @Override
     public String toString() {

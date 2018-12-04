@@ -8,8 +8,8 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
-import interface1.hospital.adoptadmin.AdoptAdminJPanel;
+import Business.Overall_UserAccount.UserAccount;
+import interface1.hospital.adoptadminRole.AdoptAdminJPanel;
 import javax.swing.JPanel;
 
 /**

@@ -5,7 +5,7 @@
  */
 package Business.Communal_Pet;
 
-import Business.Employee.Employee;
+import Business.Overall_Employee.Employee;
 import java.util.ArrayList;
 
 /**
@@ -13,20 +13,27 @@ import java.util.ArrayList;
  * @author 15142087777的AW
  */
 public class PetDirectory {
-    private ArrayList<Employee> employeeList;
+    private ArrayList<Pet> petList;
 
     public PetDirectory() {
-        employeeList = new ArrayList();
+        petList = new ArrayList();
     }
 
-    public ArrayList<Employee> getEmployeeList() {
-        return employeeList;
+    public ArrayList<Pet> getPetList() {
+        return petList;
+    }
+
+    public void setPetList(ArrayList<Pet> petList) {
+        this.petList = petList;
     }
     
-    public Employee createEmployee(String name){
-        Employee employee = new Employee();
-        employee.setName(name);
-        employeeList.add(employee);
-        return employee;
+    public Pet createPet(String petName){
+        Pet pet = new Pet();
+        
+        pet.setPetName(petName);
+        
+        petList.add(pet);
+        
+        return pet;
     }
 }

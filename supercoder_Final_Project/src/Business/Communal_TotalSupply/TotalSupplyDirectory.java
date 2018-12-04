@@ -5,29 +5,37 @@
  */
 package Business.Communal_TotalSupply;
 
-import Business.Communal_Customer.*;
-import Business.Employee.Employee;
 import java.util.ArrayList;
 
 /**
  *
  * @author 15142087777的AW
  */
+
 public class TotalSupplyDirectory {
-    private ArrayList<TotalSupply> customerList;
+    private ArrayList<TotalSupply> totalSupplyList;
 
     public TotalSupplyDirectory() {
-        customerList = new ArrayList();
+        totalSupplyList = new ArrayList();
     }
 
-    public ArrayList<TotalSupply> getCustomerList() {
-        return customerList;
+    public ArrayList<TotalSupply> getTotalSupplyList() {
+        return totalSupplyList;
     }
+
+    public void setTotalSupplyList(ArrayList<TotalSupply> totalSupplyList) {
+        this.totalSupplyList = totalSupplyList;
+    }
+
     
-    public TotalSupply createCustomer(String name){
-        TotalSupply customer = new TotalSupply();
-        customer.setName(name);
-        customerList.add(customer);
-        return customer;
+    public TotalSupply createCustomer(String supplyName, int supplyQuantity){
+        TotalSupply totalSupply = new TotalSupply();
+        
+        totalSupply.setSupplyName(supplyName);
+        totalSupply.setSupplyQuantity(supplyQuantity);
+        
+        totalSupplyList.add(totalSupply);
+        
+        return totalSupply;
     }
 }

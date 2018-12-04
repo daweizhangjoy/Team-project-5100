@@ -4,74 +4,64 @@
  */
 package Business.Organization.Hospital;
 
-import Business.Organization.*;
-import Business.Employee.EmployeeDirectory;
-import Business.Role.Role;
-import Business.UserAccount.UserAccountDirectory;
+import Business.Hospital_Doctor.DoctorDirectory;
+import Business.Hospital_Employee.EmployeeDirectory;
+import Business.Hospital_TotalSupply.TotalSupplyDirectory;
+import Business.Hospital_UserAccount.UserAccountDirectory;
+import Business.Organization.Organization;
 //import Business.WorkQueue.WorkQueue;
-import java.util.ArrayList;
-
 /**
  *
  * @author raunak
  */
-public class HospitalOrganization extends Organization{
-
-    private String name;
-    //private WorkQueue workQueue;
-    private EmployeeDirectory employeeDirectory;
-    private UserAccountDirectory userAccountDirectory;
-    private int organizationID;
-    private static int counter=0;
+public abstract class HospitalOrganization extends Organization{
     
-    public enum Type{
-        HospitalHRAdmin("HRAdmin Organization"), HospitalMonitor("HospitalMonitor Organization"), HospitalPatient("HospitalPatient Organization"), HospitalSupplyManage("HospitalSupplyManage Organization"), 
-        ShelterAdopt("ShelterAdopt Organization"), ShelterMonitor("ShelterMonitor Organization"), ShelterPetKeep("ShelterPetKeep Organization"), ShelterSupplyManage("ShelterSupplyManage Organization"), 
-        SupplyIncome("SupplyIncome Organization"), SupplyOutcome("SupplyOutcome Organization");
-        private String value;
-        private Type(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
-
+    private DoctorDirectory hospitalDoctorDirectory;
+    private EmployeeDirectory hospitalEmployeeDirectory;
+    private TotalSupplyDirectory hospitalTotalSupplyDirectory;
+    private UserAccountDirectory hospitalUserAccountDirectory;
+    
+    
     public HospitalOrganization(String name) {
-        this.name = name;
-        //workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        organizationID = counter;
-        ++counter;
+        super(name);
+        hospitalDoctorDirectory = new DoctorDirectory();
+        hospitalEmployeeDirectory = new EmployeeDirectory();
+        hospitalTotalSupplyDirectory = new TotalSupplyDirectory();
+        hospitalUserAccountDirectory = new UserAccountDirectory();
     }
 
-    //public abstract ArrayList<Role> getSupportedRole();
-    
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
+    public DoctorDirectory getHospitalDoctorDirectory() {
+        return hospitalDoctorDirectory;
     }
 
-    public int getOrganizationID() {
-        return organizationID;
+    public void setHospitalDoctorDirectory(DoctorDirectory hospitalDoctorDirectory) {
+        this.hospitalDoctorDirectory = hospitalDoctorDirectory;
     }
 
-    public EmployeeDirectory getEmployeeDirectory() {
-        return employeeDirectory;
-    }
-    
-    public String getName() {
-        return name;
+    public EmployeeDirectory getHospitalEmployeeDirectory() {
+        return hospitalEmployeeDirectory;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHospitalEmployeeDirectory(EmployeeDirectory hospitalEmployeeDirectory) {
+        this.hospitalEmployeeDirectory = hospitalEmployeeDirectory;
     }
 
-    @Override
-    public String toString() {
-        return name;
+    public TotalSupplyDirectory getHospitalTotalSupplyDirectory() {
+        return hospitalTotalSupplyDirectory;
     }
-    
+
+    public void setHospitalTotalSupplyDirectory(TotalSupplyDirectory hospitalTotalSupplyDirectory) {
+        this.hospitalTotalSupplyDirectory = hospitalTotalSupplyDirectory;
+    }
+
+    public UserAccountDirectory getHospitalUserAccountDirectory() {
+        return hospitalUserAccountDirectory;
+    }
+
+    public void setHospitalUserAccountDirectory(UserAccountDirectory hospitalUserAccountDirectory) {
+        this.hospitalUserAccountDirectory = hospitalUserAccountDirectory;
+    }
+
+
     
 }
