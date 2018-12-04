@@ -5,10 +5,21 @@
  */
 package Business.Role;
 
+import Business.Communal_UserAccount.UserAccount;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
+import interface1.shelter.PetkeepRole.ShelterPetKeepJPanel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author 15142087777的AW
  */
 public class ShelterPetKeepRole extends Role{
-    
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new ShelterPetKeepJPanel(userProcessContainer, account, organization, business);
+    }
 }

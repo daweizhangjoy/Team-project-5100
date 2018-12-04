@@ -5,7 +5,7 @@
  */
 package Business.Organization.Hospital;
 
-import Business.Organization.Organization;
+import Business.Role.HospitalAdminRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class HospitalAdminOrganization extends HospitalOrganization{
 
     public HospitalAdminOrganization() {
-        super(Organization.Type.HospitalAdmin.getValue());
+        super(Type.HospitalAdmin.getValue());
     }
     
     @Override

@@ -5,19 +5,17 @@
  */
 package Business.Organization.Shelter;
 
-import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.ShelterAdoptAdmin;
-import Business.Role.ShelterPetKeeperRole;
 import java.util.ArrayList;
 /**
  *
  * @author 15142087777的AW
  */
-public class ShelterAdoptOrganization extends Organization{
+public class ShelterAdoptOrganization extends ShelterOrganization{
 
     public ShelterAdoptOrganization() {
-        super(Organization.Type.ShelterAdopt.getValue());
+        super(Type.ShelterAdopt.getValue());
     }
     
     @Override

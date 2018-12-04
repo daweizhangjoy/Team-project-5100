@@ -5,24 +5,24 @@
  */
 package Business.Organization.Shelter;
 
-import Business.Organization.Organization;
 import Business.Role.Role;
-import Business.Role.ShelterPetKeeperRole;
+import Business.Role.ShelterPetKeepRole;
+import Business.Role.ShelterPetKeepRole;
 import java.util.ArrayList;
 /**
  *
  * @author 15142087777的AW
  */
-public class ShelterPetKeepOrganization extends Organization{
+public class ShelterPetKeepOrganization extends ShelterOrganization{
 
     public ShelterPetKeepOrganization() {
-        super(Organization.Type.ShelterPetKeep.getValue());
+        super(Type.ShelterPetKeep.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new ShelterPetKeeperRole());
+        roles.add(new ShelterPetKeepRole());
         return roles;
     }
     

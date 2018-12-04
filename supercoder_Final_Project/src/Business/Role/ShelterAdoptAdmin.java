@@ -8,8 +8,9 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Overall_UserAccount.UserAccount;
-import interface1.hospital.adoptadminRole.AdoptAdminJPanel;
+import Business.Communal_UserAccount.UserAccount;
+import interface1.hospital.supplyManageRole.HospitalSupplyManageJPanel;
+import interface1.shelter.adoptRole.ShelterAdoptJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -20,7 +21,7 @@ public class ShelterAdoptAdmin extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new AdoptAdminJPanel(userProcessContainer, account, organization, business);
+        return new ShelterAdoptJPanel(userProcessContainer, account, organization, business);
     }
     
     

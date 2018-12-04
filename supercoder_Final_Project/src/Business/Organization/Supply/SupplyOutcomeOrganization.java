@@ -5,25 +5,24 @@
  */
 package Business.Organization.Supply;
 
-import Business.Organization.Organization;
-//import Business.Role.AdminRole;
 import Business.Role.Role;
+import Business.Role.SupplyOutcomeRole;
 import java.util.ArrayList;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class SupplyOutcomeOrganization extends Organization{
+public class SupplyOutcomeOrganization extends SupplyOrganization{
 
     public SupplyOutcomeOrganization() {
-        super(Organization.Type.SupplyOutcome.getValue());
+        super(Type.SupplyOutcome.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new AdminRole());
+        roles.add(new SupplyOutcomeRole());
         return roles;
     }
     

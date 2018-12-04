@@ -5,11 +5,11 @@
 package interface1.administrativeRole;
 
 import Business.EcoSystem;
-import Business.Overall_Employee.Employee;
+import Business.Communal_Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.AdminRole;
-import Business.Overall_UserAccount.UserAccount;
+import Business.Communal_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;

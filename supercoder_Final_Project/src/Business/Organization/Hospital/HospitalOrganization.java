@@ -5,9 +5,7 @@
 package Business.Organization.Hospital;
 
 import Business.Hospital_Doctor.DoctorDirectory;
-import Business.Hospital_Employee.EmployeeDirectory;
 import Business.Hospital_TotalSupply.TotalSupplyDirectory;
-import Business.Hospital_UserAccount.UserAccountDirectory;
 import Business.Organization.Organization;
 //import Business.WorkQueue.WorkQueue;
 /**
@@ -17,17 +15,13 @@ import Business.Organization.Organization;
 public abstract class HospitalOrganization extends Organization{
     
     private DoctorDirectory hospitalDoctorDirectory;
-    private EmployeeDirectory hospitalEmployeeDirectory;
     private TotalSupplyDirectory hospitalTotalSupplyDirectory;
-    private UserAccountDirectory hospitalUserAccountDirectory;
     
     
     public HospitalOrganization(String name) {
         super(name);
         hospitalDoctorDirectory = new DoctorDirectory();
-        hospitalEmployeeDirectory = new EmployeeDirectory();
         hospitalTotalSupplyDirectory = new TotalSupplyDirectory();
-        hospitalUserAccountDirectory = new UserAccountDirectory();
     }
 
     public DoctorDirectory getHospitalDoctorDirectory() {
@@ -38,14 +32,6 @@ public abstract class HospitalOrganization extends Organization{
         this.hospitalDoctorDirectory = hospitalDoctorDirectory;
     }
 
-    public EmployeeDirectory getHospitalEmployeeDirectory() {
-        return hospitalEmployeeDirectory;
-    }
-
-    public void setHospitalEmployeeDirectory(EmployeeDirectory hospitalEmployeeDirectory) {
-        this.hospitalEmployeeDirectory = hospitalEmployeeDirectory;
-    }
-
     public TotalSupplyDirectory getHospitalTotalSupplyDirectory() {
         return hospitalTotalSupplyDirectory;
     }
@@ -53,15 +39,6 @@ public abstract class HospitalOrganization extends Organization{
     public void setHospitalTotalSupplyDirectory(TotalSupplyDirectory hospitalTotalSupplyDirectory) {
         this.hospitalTotalSupplyDirectory = hospitalTotalSupplyDirectory;
     }
-
-    public UserAccountDirectory getHospitalUserAccountDirectory() {
-        return hospitalUserAccountDirectory;
-    }
-
-    public void setHospitalUserAccountDirectory(UserAccountDirectory hospitalUserAccountDirectory) {
-        this.hospitalUserAccountDirectory = hospitalUserAccountDirectory;
-    }
-
 
     
 }

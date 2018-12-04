@@ -5,10 +5,21 @@
  */
 package Business.Role;
 
+import Business.Communal_UserAccount.UserAccount;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author 15142087777的AW
  */
 public class HospitalHRAdminRole extends Role{
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new HospitalHRAdminJPanel(userProcessContainer, account, organization, business);
+    }
     
 }

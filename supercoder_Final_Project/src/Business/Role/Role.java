@@ -7,7 +7,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Overall_UserAccount.UserAccount;
+import Business.Communal_UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**

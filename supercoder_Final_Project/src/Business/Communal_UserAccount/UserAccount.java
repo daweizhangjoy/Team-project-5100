@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Overall_UserAccount;
+package Business.Communal_UserAccount;
 
-import Business.Overall_Employee.Employee;
+import Business.Communal_Employee.Employee;
 import Business.Role.Role;
 
 /**

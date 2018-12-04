@@ -9,6 +9,8 @@ import Business.Communal_Customer.CustomerDirectory;
 import Business.Communal_Pet.PetDirectory;
 import Business.Communal_PetCase.PetCaseDirectory;
 import Business.Communal_TotalSupply.TotalSupplyDirectory;
+import Business.Communal_Employee.EmployeeDirectory;
+import Business.Communal_UserAccount.UserAccountDirectory;
 import Business.Role.Role;
 
 //import Business.WorkQueue.WorkQueue;
@@ -27,7 +29,9 @@ public abstract class Organization {
     private PetDirectory petDirectory;
     private PetCaseDirectory petCaseDirectory;
     private TotalSupplyDirectory totalSupplyDirectory;
-     
+    private UserAccountDirectory userAccountDirectory;
+    private EmployeeDirectory employeeDirectory;
+    
     private int organizationID;
     private static int counter=0;
     
@@ -52,6 +56,9 @@ public abstract class Organization {
         petDirectory = new PetDirectory();
         petCaseDirectory = new PetCaseDirectory();
         totalSupplyDirectory = new TotalSupplyDirectory();
+        userAccountDirectory = new UserAccountDirectory();
+        employeeDirectory = new EmployeeDirectory();
+        
         
         organizationID = counter;
         ++counter;
@@ -121,6 +128,22 @@ public abstract class Organization {
 
     public static void setCounter(int counter) {
         Organization.counter = counter;
+    }
+
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public void setUserAccountDirectory(UserAccountDirectory userAccountDirectory) {
+        this.userAccountDirectory = userAccountDirectory;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+
+    public void setEmployeeDirectory(EmployeeDirectory employeeDirectory) {
+        this.employeeDirectory = employeeDirectory;
     }
     
     

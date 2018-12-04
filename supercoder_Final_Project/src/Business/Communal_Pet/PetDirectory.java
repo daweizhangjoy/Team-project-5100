@@ -5,7 +5,7 @@
  */
 package Business.Communal_Pet;
 
-import Business.Overall_Employee.Employee;
+import Business.Communal_Employee.Employee;
 import java.util.ArrayList;
 
 /**

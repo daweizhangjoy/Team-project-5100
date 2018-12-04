@@ -3,27 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interface1.hospital.adoptadminRole;
-
-import Business.EcoSystem;
-import Business.Organization.Organization;
-import Business.Overall_UserAccount.UserAccount;
-import javax.swing.JPanel;
+package interface1.shelter.SupplyManageRole;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class AdoptAdminJPanel extends javax.swing.JPanel {
+public class ShelterSupplyManageJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form AdoptAdminJPanel
+     * Creates new form ShelterSupplyManageJPanel
      */
-    public AdoptAdminJPanel() {
-        initComponents();
-    }
-
-    public AdoptAdminJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+    public ShelterSupplyManageJPanel() {
         initComponents();
     }
 
