@@ -35,7 +35,7 @@ public class OrganizationDirectory {
         return organizationList;
     }
     
-    public Organization createOrganization(Type type){
+    public Organization createOrganization(Type type){/*此构造函数需要重写，因为数据结构是有共有的且有独有的*/
         Organization organization = null;
         
         if (type.getValue().equals(Type.HospitalHRAdmin.getValue()))

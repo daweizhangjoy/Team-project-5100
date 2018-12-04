@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Customer;
+package Business.Communal_TotalSupply;
 
-import Business.Pet.PetDirectory;
+import Business.Communal_Customer.*;
+import Business.Communal_Pet.PetDirectory;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class Customer {
+public class TotalSupply {
     private String name;
     private int id;
     private static int count = 1;
     private PetDirectory petDirectory;
 
-    public Customer() {
+    public TotalSupply() {
         id = count;
         count++;
         petDirectory = new PetDirectory();
@@ -46,7 +47,7 @@ public class Customer {
     }
 
     public static void setCount(int count) {
-        Customer.count = count;
+        TotalSupply.count = count;
     }
 
     public PetDirectory getPetDirectory() {

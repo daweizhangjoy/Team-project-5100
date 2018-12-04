@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Organization.Supply;
 
-import Business.Communal_Customer.CustomerDirectory;
+import Business.Organization.*;
 import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
@@ -15,14 +15,12 @@ import java.util.ArrayList;
  *
  * @author raunak
  */
-public abstract class Organization {
+public abstract class SupplyOrganization {
 
     private String name;
     //private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
-    private CustomerDirectory customerDirectory;
-    
     private int organizationID;
     private static int counter=0;
     
@@ -39,7 +37,7 @@ public abstract class Organization {
         }
     }
 
-    public Organization(String name) {
+    public SupplyOrganization(String name) {
         this.name = name;
         //workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();

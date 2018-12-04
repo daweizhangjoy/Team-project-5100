@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author 15142087777的AW
  */
-public class HospitalSupplyManageOrganization extends Organization{
+public class HospitalSupplyManageOrganization extends HospitalOrganization{
 
     public HospitalSupplyManageOrganization() {
         super(Organization.Type.HospitalSupplyManage.getValue());
