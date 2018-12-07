@@ -5,7 +5,7 @@
  */
 package interface1.shelter.PetkeepRole;
 
-import Business.Communal_UserAccount.UserAccount;
+import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
 import Business.Organization.Organization;
 import javax.swing.JPanel;

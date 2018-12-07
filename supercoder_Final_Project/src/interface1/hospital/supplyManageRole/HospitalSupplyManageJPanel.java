@@ -7,7 +7,7 @@ package interface1.hospital.supplyManageRole;
 
 import Business.EcoSystem;
 import Business.Organization.Organization;
-import Business.Communal_UserAccount.UserAccount;
+import Business.Total_UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**

@@ -5,11 +5,18 @@
 package interface1.administrativeRole;
 
 import Business.EcoSystem;
-import Business.Communal_Employee.Employee;
+import Business.Total_Employee.Employee;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.Enterprise.EnterpriseType;
+import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
+import static Business.Enterprise.Enterprise.EnterpriseType.Shelter;
+import static Business.Enterprise.Enterprise.EnterpriseType.Supply;
 import Business.Network.Network;
+import Business.Role.HospitalAdminRole;
+import Business.Role.ShelterAdminRole;
+import Business.Role.SupplyAdminRole;
 import Business.Role.SystemAdminRole;
-import Business.Communal_UserAccount.UserAccount;
+import Business.Total_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -41,24 +48,34 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
 
         model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
-                    Object[] row = new Object[3];
-                    row[0] = enterprise.getName();
-                    row[1] = network.getName();
-                    row[2] = userAccount.getUsername();
+//        for (Network network : system.getNetworkDirectory().getNetworkList()) {
+//            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+//                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+//                    Object[] row = new Object[3];
+//                    row[0] = enterprise.getName();
+//                    row[1] = network.getName();
+//                    row[2] = userAccount.getUsername();
+//
+//                    model.addRow(row);
+//                }
+//            }
+//        }
+        for(UserAccount userAccount : system.getUserAccountDirectory().getUserAccountList())
+        {
+            Object[] row = new Object[4];
+            row[0] = userAccount.getEnterpriseName();
+            row[1] = userAccount.getEnterpriseType();
+            row[2] = userAccount.getNetworkName();
+            row[3] = userAccount.getUsername();
 
-                    model.addRow(row);
-                }
-            }
+            model.addRow(row);
         }
     }
 
     private void populateNetworkComboBox(){
         networkJComboBox.removeAllItems();
         
-        for (Network network : system.getNetworkList()){
+        for (Network network : system.getNetworkDirectory().getNetworkList()){
             networkJComboBox.addItem(network);
         }
     }
@@ -98,17 +115,17 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Enterprise Name", "Network", "Username"
+                "Enterprise Name", "RnterpriseType", "Network", "Username"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -243,14 +260,42 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        EnterpriseType enterpriseType = enterprise.getEnterpriseType();
+        int enterpriseID = enterprise.getEnterpriseID();
+        String enterpriseName = enterprise.getName();
+        
+        Network network = (Network) networkJComboBox.getSelectedItem();
+        int networkID = network.getNetworkID();
+        String networkName = network.getName();
         
         String username = usernameJTextField.getText();
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
         
-        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+        Employee employee = system.getEmployeeDirectory().createEmployee(name);
         
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new SystemAdminRole());
+        if(enterpriseType.equals(Hospital))
+        {
+            UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole(), 
+                                                                                    networkID, enterpriseID, 
+                                                                                    networkName, enterpriseName, "HospitalAdmin", 
+                                                                                    Hospital);
+        }
+        else if(enterpriseType.equals(Shelter))
+        {
+            UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new ShelterAdminRole(), 
+                                                                                    networkID, enterpriseID, 
+                                                                                    networkName, enterpriseName, "ShelterAdmin", 
+                                                                                    Shelter);
+        }
+        else if(enterpriseType.equals(Supply))
+        {
+            UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new SupplyAdminRole(), 
+                                                                                    networkID, enterpriseID, 
+                                                                                    networkName, enterpriseName, "Supply", 
+                                                                                    Supply);
+        }
+//        UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new SystemAdminRole());
         populateTable();
         
     }//GEN-LAST:event_submitJButtonActionPerformed

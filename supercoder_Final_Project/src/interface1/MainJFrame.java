@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import Business.Communal_UserAccount.UserAccount;
+import Business.Total_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -28,8 +28,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     public MainJFrame() {
         initComponents();
-        //system = dB4OUtil.retrieveSystem();
-        //this.setSize(1680, 1050);
+        system = dB4OUtil.retrieveSystem();
+        this.setSize(1680, 1050);
     }
 
     /**
@@ -58,12 +58,6 @@ public class MainJFrame extends javax.swing.JFrame {
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginJButtonActionPerformed(evt);
-            }
-        });
-
-        userNameJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameJTextFieldActionPerformed(evt);
             }
         });
 
@@ -141,42 +135,37 @@ public class MainJFrame extends javax.swing.JFrame {
         Enterprise inEnterprise=null;
         Organization inOrganization=null;
         
-        if(userAccount==null)
-        {
-            //Step 2: Go inside each network and check each enterprise
-            for(Network network:system.getNetworkList())
-            {
-                //Step 2.a: check against each enterprise
-                for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList())
-                {
-                    userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
-                    if(userAccount==null)
-                    {
-                       //Step 3:check against each organization for each enterprise
-                       for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList())
-                       {
-                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
-                           if(userAccount!=null){
-                               inEnterprise=enterprise;
-                               inOrganization=organization;
-                               break;
-                           }
-                       }
-                        
-                    }
-                    else{
-                       inEnterprise=enterprise;
-                       break;
-                    }
-                    if(inOrganization!=null){
-                        break;
-                    }  
-                }
-                if(inEnterprise!=null){
-                    break;
-                }
-            }
-        }
+//        if(userAccount==null){
+//            //Step 2: Go inside each network and check each enterprise
+//            for(Network network:system.getNetworkList()){
+//                //Step 2.a: check against each enterprise
+//                for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
+//                    userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
+//                    if(userAccount==null){
+//                       //Step 3:check against each organization for each enterprise
+//                       for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList()){
+//                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
+//                           if(userAccount!=null){
+//                               inEnterprise=enterprise;
+//                               inOrganization=organization;
+//                               break;
+//                           }
+//                       }
+//                        
+//                    }
+//                    else{
+//                       inEnterprise=enterprise;
+//                       break;
+//                    }
+//                    if(inOrganization!=null){
+//                        break;
+//                    }  
+//                }
+//                if(inEnterprise!=null){
+//                    break;
+//                }
+//            }
+//        }
         
         if(userAccount==null){
             JOptionPane.showMessageDialog(null, "Invalid credentials");
@@ -210,10 +199,6 @@ public class MainJFrame extends javax.swing.JFrame {
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_logoutJButtonActionPerformed
-
-    private void userNameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userNameJTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

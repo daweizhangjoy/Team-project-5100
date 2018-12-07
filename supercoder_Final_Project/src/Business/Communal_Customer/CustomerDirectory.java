@@ -5,7 +5,7 @@
  */
 package Business.Communal_Customer;
 
-import Business.Communal_Employee.Employee;
+import Business.Total_Employee.Employee;
 import java.util.ArrayList;
 
 /**

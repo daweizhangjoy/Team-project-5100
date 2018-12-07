@@ -1,8 +1,10 @@
 package Business;
 
-import Business.Communal_Employee.Employee;
+import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Hospital;
+import Business.Total_Employee.Employee;
 import Business.Role.SystemAdminRole;
-import Business.Communal_UserAccount.UserAccount;
+import Business.Total_UserAccount.UserAccount;
 
 /**
  *
@@ -23,7 +25,7 @@ public class ConfigureASystem {
         
         Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
         
-        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
+        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole(), 0,  0,"", "", "", Enterprise.EnterpriseType.SystemAdmin);
         
         return system;
     }

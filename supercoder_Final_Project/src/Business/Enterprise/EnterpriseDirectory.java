@@ -43,6 +43,10 @@ public class EnterpriseDirectory {
             enterprise=new SupplyEnterprise(name);
             enterpriseList.add(enterprise);
         }
+        else if(type==Enterprise.EnterpriseType.SystemAdmin){
+            enterprise=new SupplyEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
         
         return enterprise;
     }

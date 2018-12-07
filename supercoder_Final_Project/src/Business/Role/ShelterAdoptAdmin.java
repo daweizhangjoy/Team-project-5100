@@ -8,7 +8,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Communal_UserAccount.UserAccount;
+import Business.Total_UserAccount.UserAccount;
 import interface1.hospital.supplyManageRole.HospitalSupplyManageJPanel;
 import interface1.shelter.adoptRole.ShelterAdoptJPanel;
 import javax.swing.JPanel;

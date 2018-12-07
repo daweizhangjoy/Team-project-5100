@@ -6,7 +6,7 @@
 package Business.Communal_PetCase;
 
 import Business.Communal_Customer.*;
-import Business.Communal_Employee.Employee;
+import Business.Total_Employee.Employee;
 import java.util.ArrayList;
 import java.util.Date;
 
