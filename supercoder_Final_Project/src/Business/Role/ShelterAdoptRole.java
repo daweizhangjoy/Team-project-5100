@@ -8,8 +8,9 @@ package Business.Role;
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
-import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
 import interface1.shelter.adoptRole.ShelterAdoptJPanel;
 import javax.swing.JPanel;
 
@@ -19,8 +20,8 @@ import javax.swing.JPanel;
  */
 public class ShelterAdoptRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new ShelterAdoptJPanel(userProcessContainer, account, organization, business);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+        return new ShelterAdoptJPanel(userProcessContainer, account, organization, (ShelterEnterprise)enterprise, network, business);
     }
     
 }

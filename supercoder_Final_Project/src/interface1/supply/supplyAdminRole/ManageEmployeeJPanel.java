@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package interface1.hospital.adminRole;
+package interface1.supply.supplyAdminRole;
 
+import interface1.shelter.adminRole.*;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Total_Employee.Employee;

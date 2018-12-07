@@ -38,4 +38,19 @@ public class TotalSupplyDirectory {
         
         return totalSupply;
     }
+    
+    public void deleteTotalSupply(TotalSupply totalSupply)
+    {
+        totalSupplyList.remove(totalSupply);
+    }
+    
+    public TotalSupply searchTotalSupply(int supplyId)
+    {
+        for(TotalSupply totalSupply : this.totalSupplyList){
+            if(totalSupply.getSupplyId()==supplyId){
+                return totalSupply;
+            }
+        }
+        return null;
+    }
 }

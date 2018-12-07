@@ -36,4 +36,19 @@ public class PetDirectory {
         
         return pet;
     }
+    
+    public void deletePet(Pet pet)
+    {
+        petList.remove(pet);
+    }
+    
+    public Pet searchPet(int petId)
+    {
+        for(Pet pet : this.petList){
+            if(pet.getId()==petId){
+                return pet;
+            }
+        }
+        return null;
+    }
 }

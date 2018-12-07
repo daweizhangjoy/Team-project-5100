@@ -16,18 +16,18 @@ import java.util.ArrayList;
  */
 public abstract class ShelterOrganization extends Organization{
     
-    private TotalSupplyDirectory shelterTotalSupplyDirectory;    
+//    private TotalSupplyDirectory shelterTotalSupplyDirectory;    
     
     public ShelterOrganization(String name) {
         super(name);
-        shelterTotalSupplyDirectory = new TotalSupplyDirectory();
+//        shelterTotalSupplyDirectory = new TotalSupplyDirectory();
     }
 
-    public TotalSupplyDirectory getShelterTotalSupplyDirectory() {
-        return shelterTotalSupplyDirectory;
-    }
-
-    public void setShelterTotalSupplyDirectory(TotalSupplyDirectory shelterTotalSupplyDirectory) {
-        this.shelterTotalSupplyDirectory = shelterTotalSupplyDirectory;
-    }
+//    public TotalSupplyDirectory getShelterTotalSupplyDirectory() {
+//        return shelterTotalSupplyDirectory;
+//    }
+//
+//    public void setShelterTotalSupplyDirectory(TotalSupplyDirectory shelterTotalSupplyDirectory) {
+//        this.shelterTotalSupplyDirectory = shelterTotalSupplyDirectory;
+//    }
 }

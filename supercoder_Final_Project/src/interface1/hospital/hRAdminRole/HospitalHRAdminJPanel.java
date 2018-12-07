@@ -7,8 +7,16 @@ package interface1.hospital.hRAdminRole;
 
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.HospitalEnterprise;
+import Business.Hospital_Doctor.Doctor;
+import Business.Hospital_Doctor.DoctorDirectory;
+import Business.Network.Network;
 import Business.Organization.Organization;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,12 +27,23 @@ public class HospitalHRAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HospitalHRAdminJPanel
      */
-    public HospitalHRAdminJPanel() {
-        initComponents();
-    }
+    JPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    HospitalEnterprise hospitalEnterprise;
+    Network network;
+    EcoSystem business;
 
-    public HospitalHRAdminJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public HospitalHRAdminJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, HospitalEnterprise hospitalEnterprise, Network network, EcoSystem business) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.hospitalEnterprise = hospitalEnterprise;
+        this.network = network;
+        this.business = business;
+        valueLabel.setText(hospitalEnterprise.getName());
+        populateTable();
     }
 
     /**
@@ -36,19 +55,139 @@ public class HospitalHRAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel1 = new javax.swing.JLabel();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        doctorListTable = new javax.swing.JTable();
+        doctorNameTextField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        deleteButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("My Work Area -HR Role");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("EnterPrise :");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+
+        doctorListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Doctor ID", "DoctorName"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(doctorListTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 520, 250));
+
+        doctorNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doctorNameTextFieldActionPerformed(evt);
+            }
+        });
+        add(doctorNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 100, 30));
+
+        jLabel2.setText("Docotor Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, -1, -1));
+
+        deleteButton.setText("delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 90, -1));
+
+        addButton.setText("Add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
+        add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 90, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void doctorNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_doctorNameTextFieldActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+        String name = doctorNameTextField.getText();
+
+        Doctor doctor = hospitalEnterprise.getHospitalDoctorDirectory().createEmployee(name);
+        
+        populateTable();
+    }//GEN-LAST:event_addButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = doctorListTable.getSelectedRow();
+        if(selectedRow<0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
+        }
+        else
+        { 
+            int selectionButton = JOptionPane.YES_NO_OPTION;
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete??","Warning",selectionButton);
+            
+            if(selectionResult == JOptionPane.YES_OPTION)
+            {
+                Doctor doctor = (Doctor)doctorListTable.getValueAt(selectedRow, 0);
+                DoctorDirectory doctorDirectory = hospitalEnterprise.getHospitalDoctorDirectory();
+                doctorDirectory.deleteDoctor(doctor);
+                
+                populateTable();
+            }
+            
+            populateTable();
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JTable doctorListTable;
+    private javax.swing.JTextField doctorNameTextField;
+    private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) doctorListTable.getModel();
+        
+        model.setRowCount(0);
+        
+        for (Doctor doctor : hospitalEnterprise.getHospitalDoctorDirectory().getEmployeeList()){
+            Object[] row = new Object[2];
+//            row[0] = doctor.getId();
+            row[0] = doctor;
+            row[1] = doctor.getName();
+            
+            model.addRow(row);
+        }
+    }
 }

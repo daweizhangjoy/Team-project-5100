@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package interface1.hospital.adminRole;
+package interface1.supply.supplyAdminRole;
 
 import Business.Total_Employee.Employee;
 import Business.Enterprise.Enterprise;
@@ -229,7 +229,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             userAccountDirectory.createUserAccount(userName, password, employee, role, 
                                                     network.getNetworkID(), enterprise.getEnterpriseID(), organization.getOrganizationID(), 
                                                     network.getName(), enterprise.getName(), organization.getName(), 
-                                                    Enterprise.EnterpriseType.Hospital);
+                                                    Enterprise.EnterpriseType.Shelter);
         }
         
         popData();

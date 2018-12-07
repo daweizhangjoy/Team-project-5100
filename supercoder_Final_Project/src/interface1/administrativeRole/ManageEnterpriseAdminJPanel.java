@@ -19,6 +19,7 @@ import Business.Role.SystemAdminRole;
 import Business.Total_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -148,6 +149,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel3.setText("Enterprise");
 
         enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enterpriseJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterpriseJComboBoxActionPerformed(evt);
+            }
+        });
 
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -272,28 +278,38 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
         
-        Employee employee = system.getEmployeeDirectory().createEmployee(name);
+//        Employee employee = system.getEmployeeDirectory().createEmployee(name);
         
-        if(enterpriseType.equals(Hospital))
+        if(!system.getUserAccountDirectory().checkIfUsernameIsUnique(username))
         {
-            UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new HospitalAdminRole(), 
-                                                                                    networkID, enterpriseID, 
-                                                                                    networkName, enterpriseName, "HospitalAdmin", 
-                                                                                    Hospital);
+            JOptionPane.showMessageDialog(null, "username has been registered");
         }
-        else if(enterpriseType.equals(Shelter))
-        {
-            UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new ShelterAdminRole(), 
-                                                                                    networkID, enterpriseID, 
-                                                                                    networkName, enterpriseName, "ShelterAdmin", 
-                                                                                    Shelter);
-        }
-        else if(enterpriseType.equals(Supply))
-        {
-            UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new SupplyAdminRole(), 
-                                                                                    networkID, enterpriseID, 
-                                                                                    networkName, enterpriseName, "Supply", 
-                                                                                    Supply);
+        else
+        {      
+            if(enterpriseType.equals(Hospital))
+            {
+                Employee employee = system.getEmployeeDirectory().createEmployeeAdmin(name, networkID, enterpriseID, networkName, enterpriseName,"HospitalAdmin");
+                UserAccount account = system.getUserAccountDirectory().createUserAccountAdmin(username, password, employee, new HospitalAdminRole(), 
+                                                                                        networkID, enterpriseID, 
+                                                                                        networkName, enterpriseName, "HospitalAdmin", 
+                                                                                        Hospital);
+            }
+            else if(enterpriseType.equals(Shelter))
+            {
+                Employee employee = system.getEmployeeDirectory().createEmployeeAdmin(name, networkID, enterpriseID, networkName, enterpriseName,"ShelterAdmin");
+                UserAccount account = system.getUserAccountDirectory().createUserAccountAdmin(username, password, employee, new ShelterAdminRole(), 
+                                                                                        networkID, enterpriseID, 
+                                                                                        networkName, enterpriseName, "ShelterAdmin", 
+                                                                                        Shelter);
+            }
+            else if(enterpriseType.equals(Supply))
+            {
+                Employee employee = system.getEmployeeDirectory().createEmployeeAdmin(name, networkID, enterpriseID, networkName, enterpriseName,"SupplyAdmin");
+                UserAccount account = system.getUserAccountDirectory().createUserAccountAdmin(username, password, employee, new SupplyAdminRole(), 
+                                                                                        networkID, enterpriseID, 
+                                                                                        networkName, enterpriseName, "SupplyAdmin", 
+                                                                                        Supply);
+            }
         }
 //        UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new SystemAdminRole());
         populateTable();
@@ -309,6 +325,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void enterpriseJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterpriseJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

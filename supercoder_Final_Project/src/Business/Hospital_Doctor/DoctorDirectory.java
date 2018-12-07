@@ -28,4 +28,19 @@ public class DoctorDirectory {
         employeeList.add(employee);
         return employee;
     }
+    
+    public void deleteDoctor(Doctor doctor)
+    {
+        employeeList.remove(doctor);
+    }
+    
+    public Doctor searchDoctor(int doctorId)
+    {
+        for(Doctor doctor : this.employeeList){
+            if(doctor.getId()==doctorId){
+                return doctor;
+            }
+        }
+        return null;
+    }
 }

@@ -134,6 +134,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         Enterprise inEnterprise=null;
         Organization inOrganization=null;
+        Network inNetwork = null;
         
 //        if(userAccount==null){
 //            //Step 2: Go inside each network and check each enterprise
@@ -167,13 +168,26 @@ public class MainJFrame extends javax.swing.JFrame {
 //            }
 //        }
         
+        
+
         if(userAccount==null){
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
         }
-        else{
+        else if(userAccount.getUsername().equals("sysadmin"))
+        {
             CardLayout layout=(CardLayout)container.getLayout();
-            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, inNetwork, system));
+            layout.next(container);
+        }
+        else
+        {
+            inNetwork = system.getNetworkDirectory().searchNetwork(userAccount.getNetworkID());
+            inOrganization = system.getNetworkDirectory().searchNetwork(userAccount.getNetworkID()).getEnterpriseDirectory().searchEnterprise(userAccount.getEnterpriseID()).getOrganizationDirectory().searchOrganization(userAccount.getOrganizationID());
+            inEnterprise = system.getNetworkDirectory().searchNetwork(userAccount.getNetworkID()).getEnterpriseDirectory().searchEnterprise(userAccount.getEnterpriseID());
+            
+            CardLayout layout=(CardLayout)container.getLayout();
+            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, inNetwork, system));
             layout.next(container);
         }
         

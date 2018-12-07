@@ -7,6 +7,8 @@ package interface1.shelter.adoptRole;
 
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import javax.swing.JPanel;
 
@@ -24,6 +26,10 @@ public class ShelterAdoptJPanel extends javax.swing.JPanel {
     }
 
     public ShelterAdoptJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ShelterAdoptJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

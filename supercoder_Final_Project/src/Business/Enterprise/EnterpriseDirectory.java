@@ -50,4 +50,19 @@ public class EnterpriseDirectory {
         
         return enterprise;
     }
+    
+    public void deleteEnterprise(Enterprise enterprise)
+    {
+        enterpriseList.remove(enterprise);
+    }
+    
+    public Enterprise searchEnterprise(int enterpriseID)
+    {
+        for(Enterprise enterprise : this.enterpriseList){
+            if(enterprise.getEnterpriseID()==enterpriseID){
+                return enterprise;
+            }
+        }
+        return null;
+    }
 }

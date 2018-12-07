@@ -29,4 +29,19 @@ public class NetworkDirectory {
         
         return network;
     }
+    
+    public void deleteNetwork(Network network)
+    {
+        networkList.remove(network);
+    }
+    
+    public Network searchNetwork(int networkID)
+    {
+        for(Network network : this.networkList){
+            if(network.getNetworkID()==networkID){
+                return network;
+            }
+        }
+        return null;
+    }
 }

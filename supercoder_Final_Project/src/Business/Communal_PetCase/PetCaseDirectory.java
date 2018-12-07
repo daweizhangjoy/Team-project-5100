@@ -40,4 +40,19 @@ public class PetCaseDirectory {
         
         return petCase;
     }
+    
+    public void deletePetCase(PetCase petCase)
+    {
+        petCaseList.remove(petCase);
+    }
+    
+    public PetCase searchPetCase(int caseId)
+    {
+        for(PetCase petCase : this.petCaseList){
+            if(petCase.getCaseId()==caseId){
+                return petCase;
+            }
+        }
+        return null;
+    }
 }

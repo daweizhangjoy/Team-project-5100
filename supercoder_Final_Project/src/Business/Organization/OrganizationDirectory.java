@@ -105,4 +105,19 @@ public class OrganizationDirectory {
         
         return organization;
     }
+    
+    public void deleteOrganization(Organization organization)
+    {
+        organizationList.remove(organization);
+    }
+    
+    public Organization searchOrganization(int organizationID)
+    {
+        for(Organization organization : this.organizationList){
+            if(organization.getOrganizationID() == organizationID){
+                return organization;
+            }
+        }
+        return null;
+    }
 }

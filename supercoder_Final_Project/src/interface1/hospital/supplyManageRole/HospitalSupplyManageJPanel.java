@@ -6,6 +6,8 @@
 package interface1.hospital.supplyManageRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -25,6 +27,10 @@ public class HospitalSupplyManageJPanel extends javax.swing.JPanel {
 
     public HospitalSupplyManageJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
+    }
+
+    public HospitalSupplyManageJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

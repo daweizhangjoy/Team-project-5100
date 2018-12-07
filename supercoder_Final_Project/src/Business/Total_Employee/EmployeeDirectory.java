@@ -22,10 +22,44 @@ public class EmployeeDirectory {
         return employeeList;
     }
     
-    public Employee createEmployee(String name){
-        Employee employee = new Employee();
-        employee.setName(name);
+//    public Employee createEmployee(String name){
+//        Employee employee = new Employee();
+//        employee.setName(name);
+//        employeeList.add(employee);
+//        return employee;
+//    }
+    
+    public Employee createEmployeeAdmin(String name, int networkID, int enterpriseID,
+                                            String networkName, String enterpriseName,String organizationName)
+    {
+        Employee employee = new Employee(name, networkID, networkName, enterpriseID, enterpriseName, organizationName);
+        
         employeeList.add(employee);
         return employee;
+    }
+    
+    public Employee createEmployee(String name, int networkID, int enterpriseID, int organizationID,
+                                            String networkName, String enterpriseName,String organizationName)
+    {
+        Employee employee = new Employee(name, networkID, networkName, enterpriseID, enterpriseName, organizationName);
+        employee.setOrganizationID(organizationID);
+        
+        employeeList.add(employee);
+        return employee;
+    }
+    
+    public void deleteEmployee(Employee employee)
+    {
+        employeeList.remove(employee);
+    }
+    
+    public Employee searchEmployee(int id)
+    {
+        for(Employee employee : this.employeeList){
+            if(employee.getId()==id){
+                return employee;
+            }
+        }
+        return null;
     }
 }

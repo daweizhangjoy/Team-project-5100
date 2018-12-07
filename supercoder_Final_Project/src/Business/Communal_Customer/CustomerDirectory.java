@@ -33,4 +33,19 @@ public class CustomerDirectory {
         customerList.add(customer);
         return customer;
     }
+    
+    public void deleteCustomer(Customer customer)
+    {
+        customerList.remove(customer);
+    }
+    
+    public Customer searchCustomer(int custoemrId)
+    {
+        for(Customer customer : this.customerList){
+            if(customer.getId()==custoemrId){
+                return customer;
+            }
+        }
+        return null;
+    }
 }

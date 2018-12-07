@@ -6,6 +6,7 @@
 package Business.Enterprise;
 
 import Business.Role.Role;
+import Business.Shelter_TotalSupply.TotalSupplyDirectory;
 import java.util.ArrayList;
 
 /**
@@ -14,9 +15,22 @@ import java.util.ArrayList;
  */
 public class ShelterEnterprise extends Enterprise {
     
+    private TotalSupplyDirectory shelterTotalSupplyDirectory; 
+    
     public ShelterEnterprise(String name){
         super(name,EnterpriseType.Shelter);
+        shelterTotalSupplyDirectory = new TotalSupplyDirectory();
     }
+
+    public TotalSupplyDirectory getShelterTotalSupplyDirectory() {
+        return shelterTotalSupplyDirectory;
+    }
+
+    public void setShelterTotalSupplyDirectory(TotalSupplyDirectory shelterTotalSupplyDirectory) {
+        this.shelterTotalSupplyDirectory = shelterTotalSupplyDirectory;
+    }
+    
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;

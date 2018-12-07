@@ -8,8 +8,8 @@ package Business.Role;
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
-import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
 import interface1.supply.supplyAdminRole.SupplyAdminJPanel;
 import javax.swing.JPanel;
 
@@ -19,7 +19,7 @@ import javax.swing.JPanel;
  */
 public class SupplyAdminRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new SupplyAdminJPanel(userProcessContainer, enterprise);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+        return new SupplyAdminJPanel(userProcessContainer, enterprise, network, business);
     }
 }

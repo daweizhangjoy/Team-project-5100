@@ -4,6 +4,8 @@
  */
 package Business.Hospital_Doctor;
 
+import java.util.Arrays;
+
 /**
  *
  * @author raunak
@@ -34,7 +36,7 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return name;
+        return String.valueOf(id);
     }
     
     

@@ -34,11 +34,25 @@ public class UserAccountDirectory {
         return null;
     }
     
-    public UserAccount createUserAccount(String username, String password, Employee employee, Role role, 
+    public UserAccount createUserAccountAdmin(String username, String password, Employee employee, Role role, 
                                             int networkID, int enterpriseID,
                                             String networkName, String enterpriseName,String organizationName, EnterpriseType enterpriseType)
     {
         UserAccount userAccount = new UserAccount(networkID, networkName, enterpriseID, enterpriseName, organizationName,enterpriseType);
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setEmployee(employee);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;
+    }
+    
+    public UserAccount createUserAccount(String username, String password, Employee employee, Role role, 
+                                            int networkID, int enterpriseID, int organizationID,
+                                            String networkName, String enterpriseName,String organizationName, EnterpriseType enterpriseType)
+    {
+        UserAccount userAccount = new UserAccount(networkID, networkName, enterpriseID, enterpriseName, organizationName,enterpriseType);
+        userAccount.setOrganizationID(organizationID);
         userAccount.setUsername(username);
         userAccount.setPassword(password);
         userAccount.setEmployee(employee);
@@ -53,5 +67,20 @@ public class UserAccountDirectory {
                 return false;
         }
         return true;
+    }
+    
+    public void deleteUserAccount(UserAccount userAccount)
+    {
+        userAccountList.remove(userAccount);
+    }
+    
+    public UserAccount searchUserAccount(String username)
+    {
+        for(UserAccount userAccount : this.userAccountList){
+            if(userAccount.getUsername().equals(username)){
+                return userAccount;
+            }
+        }
+        return null;
     }
 }

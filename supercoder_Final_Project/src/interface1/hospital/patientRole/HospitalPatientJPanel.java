@@ -7,6 +7,8 @@ package interface1.hospital.patientRole;
 
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import javax.swing.JPanel;
 
@@ -24,6 +26,10 @@ public class HospitalPatientJPanel extends javax.swing.JPanel {
     }
 
     public HospitalPatientJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public HospitalPatientJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

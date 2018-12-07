@@ -23,7 +23,7 @@ public class UserAccount {
     private String networkName;
     private int enterpriseID;
     private String enterpriseName;
-//    private int organizationID;
+    private int organizationID;
     private String organizationName;
     private EnterpriseType enterpriseType;
 
@@ -84,13 +84,13 @@ public class UserAccount {
         this.enterpriseID = enterpriseID;
     }
 
-//    public int getOrganizationID() {
-//        return organizationID;
-//    }
-//
-//    public void setOrganizationID(int organizationID) {
-//        this.organizationID = organizationID;
-//    }
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public void setOrganizationID(int organizationID) {
+        this.organizationID = organizationID;
+    }
 
     public String getNetworkName() {
         return networkName;

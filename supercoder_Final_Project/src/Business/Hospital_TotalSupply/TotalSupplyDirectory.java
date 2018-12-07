@@ -5,8 +5,6 @@
  */
 package Business.Hospital_TotalSupply;
 
-import Business.Shelter_TotalSupply.*;
-import Business.Communal_TotalSupply.*;
 import java.util.ArrayList;
 
 /**
@@ -39,5 +37,20 @@ public class TotalSupplyDirectory {
         totalSupplyList.add(totalSupply);
         
         return totalSupply;
+    }
+    
+    public void deleteTotalSupply(TotalSupply totalSupply)
+    {
+        totalSupplyList.remove(totalSupply);
+    }
+    
+    public TotalSupply searchTotalSupply(int supplyId)
+    {
+        for(TotalSupply totalSupply : this.totalSupplyList){
+            if(totalSupply.getSupplyId()==supplyId){
+                return totalSupply;
+            }
+        }
+        return null;
     }
 }

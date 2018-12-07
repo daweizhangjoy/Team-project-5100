@@ -38,4 +38,19 @@ public class PurchaseRequestDirectory {
         
         return purchaseRequest;
     }
+    
+    public void deletePurchaseRequest(PurchaseRequest purchaseRequest)
+    {
+        purchaseRequestsList.remove(purchaseRequest);
+    }
+    
+    public PurchaseRequest searchPurchaseRequest(int purchaseRequestId)
+    {
+        for(PurchaseRequest purchaseRequest : this.purchaseRequestsList){
+            if(purchaseRequest.getPurchaseRequestId() == purchaseRequestId){
+                return purchaseRequest;
+            }
+        }
+        return null;
+    }
 }

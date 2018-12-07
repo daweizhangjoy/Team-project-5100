@@ -6,7 +6,7 @@
 package Business.Organization.Shelter;
 
 import Business.Role.Role;
-import Business.Role.ShelterAdoptAdmin;
+import Business.Role.ShelterAdoptRole;
 import java.util.ArrayList;
 /**
  *
@@ -21,7 +21,7 @@ public class ShelterAdoptOrganization extends ShelterOrganization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new ShelterAdoptAdmin());
+        roles.add(new ShelterAdoptRole());
         return roles;
     }
      
