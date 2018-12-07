@@ -29,12 +29,12 @@ public class PetCaseDirectory {
         this.petCaseList = petCaseList;
     }
     
-    public PetCase createPetCase(String deseaseName, Date caseDate)
+    public PetCase createPetCase(String deseaseName, int petId)
     {
         PetCase petCase = new PetCase();
         
         petCase.setDeseaseName(deseaseName);
-        petCase.setCaseDate(caseDate);
+        petCase.setPetId(petId);
         
         petCaseList.add(petCase);
         

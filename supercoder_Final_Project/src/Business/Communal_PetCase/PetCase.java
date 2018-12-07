@@ -17,6 +17,7 @@ public class PetCase {
     private String deseaseName;
     private int caseId;
     private Date caseDate;
+    private int petId;
     private static int count = 1;
 
     public PetCase() {
@@ -56,9 +57,17 @@ public class PetCase {
     public static void setCount(int count) {
         PetCase.count = count;
     }
+
+    public int getPetId() {
+        return petId;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
     
     @Override
     public String toString() {
-        return deseaseName;
+        return String.valueOf(petId);
     }
 }
