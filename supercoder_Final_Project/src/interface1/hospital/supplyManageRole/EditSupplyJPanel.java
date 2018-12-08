@@ -38,6 +38,7 @@ public class EditSupplyJPanel extends javax.swing.JPanel {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         addButton = new javax.swing.JButton();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -75,6 +76,7 @@ public class EditSupplyJPanel extends javax.swing.JPanel {
 
         addButton.setText("Submit");
         add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 700));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -89,6 +91,7 @@ public class EditSupplyJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }
