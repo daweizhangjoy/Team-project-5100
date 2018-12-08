@@ -12,7 +12,7 @@ import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
@@ -42,28 +42,24 @@ public class MainJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        jPanel1 = new javax.swing.JPanel();
+        container = new keeptoo.KGradientPanel();
+        jPanel1 = new keeptoo.KGradientPanel();
         loginJButton = new javax.swing.JButton();
         userNameJTextField = new javax.swing.JTextField();
         passwordField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        loginJLabel = new javax.swing.JLabel();
         logoutJButton = new javax.swing.JButton();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
-        container = new javax.swing.JPanel();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(900, 700));
-        setPreferredSize(new java.awt.Dimension(900, 700));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSplitPane1.setDividerLocation(200);
-        jSplitPane1.setDividerSize(1);
 
-        jPanel1.setMinimumSize(new java.awt.Dimension(200, 700));
-        jPanel1.setPreferredSize(new java.awt.Dimension(200, 700));
+        container.setkEndColor(new java.awt.Color(204, 255, 102));
+        container.setkStartColor(new java.awt.Color(51, 255, 255));
+        container.setLayout(new java.awt.CardLayout());
+        jSplitPane1.setRightComponent(container);
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginJButton.setText("Login");
@@ -81,7 +77,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Password");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 97, -1, -1));
-        jPanel1.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 271, -1, -1));
 
         logoutJButton.setText("Logout");
         logoutJButton.setEnabled(false);
@@ -91,17 +86,19 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 233, 92, -1));
-        jPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, -1, 700));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        container.setPreferredSize(new java.awt.Dimension(700, 700));
-        container.setLayout(new java.awt.CardLayout());
-        container.add(kGradientPanel1, "card2");
-
-        jSplitPane1.setRightComponent(container);
-
-        getContentPane().add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 730));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -191,7 +188,7 @@ public class MainJFrame extends javax.swing.JFrame {
         passwordField.setText("");
 
         container.removeAll();
-        JPanel blankJP = new JPanel();
+        KGradientPanel blankJP = new KGradientPanel();
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
@@ -233,15 +230,12 @@ public class MainJFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel container;
+    private keeptoo.KGradientPanel container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private keeptoo.KGradientPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
     private javax.swing.JButton loginJButton;
-    private javax.swing.JLabel loginJLabel;
     private javax.swing.JButton logoutJButton;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField userNameJTextField;

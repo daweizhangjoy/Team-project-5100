@@ -61,7 +61,6 @@ public class HospitalPatientJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         customerIdTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -93,7 +92,6 @@ public class HospitalPatientJPanel extends javax.swing.JPanel {
             }
         });
         add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 90, 40));
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void customerIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerIdTextFieldActionPerformed
@@ -126,7 +124,6 @@ public class HospitalPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables

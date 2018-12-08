@@ -42,7 +42,6 @@ public class AddSupplyJPanel extends javax.swing.JPanel {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         addButton = new javax.swing.JButton();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -52,7 +51,6 @@ public class AddSupplyJPanel extends javax.swing.JPanel {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         addButton1 = new javax.swing.JButton();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -92,7 +90,6 @@ public class AddSupplyJPanel extends javax.swing.JPanel {
 
         addButton.setText("jButton1");
         jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
-        jPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 330));
 
         jTabbedPane1.addTab("Add by SupplyId", jPanel1);
 
@@ -125,7 +122,6 @@ public class AddSupplyJPanel extends javax.swing.JPanel {
         jTabbedPane1.addTab("Add by SupplyName", jPanel2);
 
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 580, 350));
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -151,8 +147,6 @@ public class AddSupplyJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

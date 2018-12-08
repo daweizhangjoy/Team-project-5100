@@ -43,8 +43,6 @@ public class HospitalSupplyManageJPanel extends javax.swing.JPanel {
         addButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -92,8 +90,6 @@ public class HospitalSupplyManageJPanel extends javax.swing.JPanel {
             }
         });
         add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 90, -1));
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
-        add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 480, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
@@ -113,8 +109,6 @@ public class HospitalSupplyManageJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

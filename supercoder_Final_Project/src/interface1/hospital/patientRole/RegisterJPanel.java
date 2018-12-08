@@ -72,7 +72,6 @@ public class RegisterJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         addPetCaseButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -125,7 +124,6 @@ public class RegisterJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPetCaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPetCaseButtonActionPerformed
@@ -172,7 +170,6 @@ public class RegisterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JTable petTable;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
