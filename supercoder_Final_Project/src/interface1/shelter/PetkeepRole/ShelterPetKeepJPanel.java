@@ -5,11 +5,17 @@
  */
 package interface1.shelter.PetkeepRole;
 
+import Business.Communal_Pet.Pet;
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
+import java.awt.CardLayout;
+import static java.awt.Image.SCALE_DEFAULT;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -21,16 +27,24 @@ public class ShelterPetKeepJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ShelterPetKeepJPanel
      */
-    public ShelterPetKeepJPanel() {
+    JPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    ShelterEnterprise shelterEnterprise;
+    Network network;
+    EcoSystem business;
+    
+    private static String path;
+    private static String name;
+
+    public ShelterPetKeepJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, ShelterEnterprise shelterEnterprise, Network network, EcoSystem business) {
         initComponents();
-    }
-
-    public ShelterPetKeepJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public ShelterPetKeepJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.shelterEnterprise = shelterEnterprise;
+        this.network = network;
+        this.business = business;
     }
 
     /**
@@ -42,19 +56,141 @@ public class ShelterPetKeepJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        jLabel1 = new javax.swing.JLabel();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+        addNameTextField = new javax.swing.JTextField();
+        insertPicture = new javax.swing.JButton();
+        pathTextField = new javax.swing.JTextField();
+        pictureJLabel = new javax.swing.JLabel();
+        createButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("My Work Area - Add Pet");
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 340, -1));
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("EnterPrise :");
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 120, 30));
+
+        valueLabel.setText("<value>");
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 130, -1));
+        kGradientPanel1.add(addNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 160, 40));
+
+        insertPicture.setText("Update Your Picture");
+        insertPicture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertPictureActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(insertPicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, -1, -1));
+
+        pathTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pathTextFieldActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(pathTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 150, -1));
+        kGradientPanel1.add(pictureJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 110, 120));
+
+        createButton1.setText("Create");
+        createButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createButton1ActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 100, 30));
+
+        jLabel2.setText("Edit Name");
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 30));
+
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void insertPictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertPictureActionPerformed
+        // TODO add your handling code here:
+        /*upload photo;*/
+        JFileChooser chooser = new JFileChooser();
+        
+        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int i = chooser.showOpenDialog(null);
+        if(i == chooser.APPROVE_OPTION)
+        {
+            path = chooser.getSelectedFile().getAbsolutePath();
+            name = chooser.getSelectedFile().getName();
+            System.out.println("the_file_path_is\n"+path+"\nthe_file_name_is\n"+name);
+        }
+        else
+        {
+            System.out.println("No Selection");
+        }
+
+        pathTextField.setText(name);
+
+        ImageIcon icon = new ImageIcon(path);
+        icon.setImage(icon.getImage().getScaledInstance(100, 100, SCALE_DEFAULT));
+        pictureJLabel.setIcon(icon);
+
+    }//GEN-LAST:event_insertPictureActionPerformed
+
+    private void createButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton1ActionPerformed
+        // TODO add your handling code here:
+        if((addNameTextField.getText().equals("") || path.equals("")))
+        {
+            JOptionPane.showMessageDialog(null, "Please add the name and picture");
+        }
+        else
+        {
+            Pet pet = network.getPetDirectory().createPet(addNameTextField.getText());
+            pet.setPetPicString(path);
+            
+            JOptionPane.showMessageDialog(null, "Add Successfully");
+            
+            userProcessContainer.remove(this);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
+        }
+        
+    }//GEN-LAST:event_createButton1ActionPerformed
+
+    private void pathTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pathTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pathTextFieldActionPerformed
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addNameTextField;
+    private javax.swing.JButton backJButton;
+    private javax.swing.JButton createButton1;
+    private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JButton insertPicture;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JTextField pathTextField;
+    private javax.swing.JLabel pictureJLabel;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

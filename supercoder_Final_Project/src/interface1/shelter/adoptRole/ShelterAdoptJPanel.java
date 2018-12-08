@@ -5,11 +5,16 @@
  */
 package interface1.shelter.adoptRole;
 
+import Business.Communal_Customer.Customer;
 import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
+import interface1.hospital.patientRole.RegisterJPanel;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -21,16 +26,21 @@ public class ShelterAdoptJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ShelterAdoptJPanel
      */
-    public ShelterAdoptJPanel() {
-        initComponents();
-    }
-
-    public ShelterAdoptJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    JPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    ShelterEnterprise shelterEnterprise;
+    Network network;
+    EcoSystem business;
 
     public ShelterAdoptJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.shelterEnterprise = shelterEnterprise;
+        this.network = network;
+        this.business = business;
     }
 
     /**
@@ -42,19 +52,127 @@ public class ShelterAdoptJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        jLabel1 = new javax.swing.JLabel();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
+        addNameTextField = new javax.swing.JTextField();
+        searchIdTextField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("My Work Area - Adopt System");
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 340, -1));
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("EnterPrise :");
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 120, 30));
+
+        valueLabel.setText("<value>");
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 130, -1));
+
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        addButton.setText("add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 100, -1));
+
+        searchButton.setText("search");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 90, -1));
+        kGradientPanel1.add(addNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 160, -1));
+        kGradientPanel1.add(searchIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 160, -1));
+
+        jLabel2.setText("CustomerId");
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
+
+        jLabel3.setText("CustomerName");
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 80, -1));
+
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+        int customerId = Integer.parseInt(searchIdTextField.getText());
+        
+        if(null == network.getCustomerDirectory().searchCustomer(customerId))
+        {
+            JOptionPane.showMessageDialog(null, "Customer donot exist");
+        }
+        else
+        {
+            Customer customer = network.getCustomerDirectory().searchCustomer(customerId);
+            
+            SelectPetJPanel muajp = new SelectPetJPanel(userProcessContainer, account, organization, shelterEnterprise, network, business, customer);
+            userProcessContainer.add("SelectPetJPanel", muajp);
+
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+        String customerName = addNameTextField.getText();
+        
+        if(null == addNameTextField.getText())
+        {
+            JOptionPane.showMessageDialog(null, "Please enter the customer name");
+        }
+        else
+        {
+             Customer customer = network.getCustomerDirectory().createCustomer(customerName);
+             
+            SelectPetJPanel muajp = new SelectPetJPanel(userProcessContainer, account, organization, shelterEnterprise, network, business, customer);
+            userProcessContainer.add("SelectPetJPanel", muajp);
+
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_addButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
+    private javax.swing.JTextField addNameTextField;
+    private javax.swing.JButton backJButton;
+    private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchIdTextField;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

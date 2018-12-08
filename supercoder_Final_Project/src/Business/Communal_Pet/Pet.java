@@ -11,11 +11,14 @@ package Business.Communal_Pet;
  */
 public class Pet {
     private String petName;
+    private String petPicString;
+    private boolean adoptFlag;
     private int id;
     private static int count = 1;
 
     public Pet() {
         id = count;
+        adoptFlag = false;
         count++;
     }
 
@@ -43,11 +46,25 @@ public class Pet {
         Pet.count = count;
     }
 
-    
+    public String getPetPicString() {
+        return petPicString;
+    }
+
+    public void setPetPicString(String petPicString) {
+        this.petPicString = petPicString;
+    }
+
+    public boolean isAdoptFlag() {
+        return adoptFlag;
+    }
+
+    public void setAdoptFlag(boolean adoptFlag) {
+        this.adoptFlag = adoptFlag;
+    }
     
     @Override
     public String toString() {
-        return petName ;
+        return String.valueOf(id) ;
     }
     
     
