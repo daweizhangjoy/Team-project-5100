@@ -111,6 +111,7 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         createUserJButton = new javax.swing.JButton();
         nameJTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -126,7 +127,7 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createUserJButton.setText("Create");
         createUserJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -134,11 +135,11 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
                 createUserJButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 424, -1, -1));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 240, -1));
+        kGradientPanel1.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 434, 110, 30));
+        kGradientPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 240, -1));
 
         jLabel1.setText("User Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 350, 90, -1));
 
         userJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,22 +165,18 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
             }
         });
         jScrollPane1.setViewportView(userJTable);
-        if (userJTable.getColumnModel().getColumnCount() > 0) {
-            userJTable.getColumnModel().getColumn(0).setResizable(false);
-            userJTable.getColumnModel().getColumn(1).setResizable(false);
-        }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 28, 375, 179));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 28, 375, 179));
 
         jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 240, -1));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 390, 80, -1));
+        kGradientPanel1.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 240, -1));
 
         jLabel3.setText("Employee");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 280, 80, -1));
 
         employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 240, -1));
+        kGradientPanel1.add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 240, -1));
 
         backjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backjButton1.setText("<< Back");
@@ -188,10 +185,10 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
                 backjButton1ActionPerformed(evt);
             }
         });
-        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 436, 112, -1));
+        kGradientPanel1.add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 436, 112, -1));
 
         jLabel5.setText("Organization");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 90, -1));
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -199,10 +196,10 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 240, -1));
+        kGradientPanel1.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 240, -1));
 
         jLabel4.setText("Role");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 310, 40, -1));
 
         roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         roleJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +207,18 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
                 roleJComboBoxActionPerformed(evt);
             }
         });
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 240, -1));
+        kGradientPanel1.add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 240, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -266,6 +274,7 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTextField passwordJTextField;

@@ -61,6 +61,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -73,25 +74,25 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         addPetCaseButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Choose a Pet  to make an Appointment");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 460, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 29, 460, 30));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Customer Name:");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 190, 30));
+        kGradientPanel1.add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 160, 30));
 
         customerNameLabel.setText("<value>");
-        add(customerNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 130, -1));
+        kGradientPanel1.add(customerNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 130, -1));
 
         petTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -103,11 +104,11 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         ));
         jScrollPane1.setViewportView(petTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, 170));
-        add(deseaseNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 100, -1));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, 170));
+        kGradientPanel1.add(deseaseNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 476, 160, 30));
 
         jLabel2.setText("Disease Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, -1, -1));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 470, 100, 30));
 
         addPetCaseButton.setText("Add Pet Case");
         addPetCaseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +116,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
                 addPetCaseButtonActionPerformed(evt);
             }
         });
-        add(addPetCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 120, -1));
+        kGradientPanel1.add(addPetCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 479, 120, 30));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +124,18 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPetCaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPetCaseButtonActionPerformed
@@ -170,6 +182,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JTable petTable;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables

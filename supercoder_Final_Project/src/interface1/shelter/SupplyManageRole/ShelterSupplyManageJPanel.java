@@ -43,6 +43,7 @@ public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -52,18 +53,18 @@ public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("My Work Area -Supply Management");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 460, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 470, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 140, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 130, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,10 +79,10 @@ public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, 240));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 460, 240));
 
         addButton.setText("Add new Supply");
-        add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, -1, -1));
+        kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 160, -1));
 
         editButton.setText("Edit");
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +90,7 @@ public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
                 editButtonActionPerformed(evt);
             }
         });
-        add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 520, 100, -1));
+        kGradientPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 520, 110, -1));
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +98,18 @@ public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
                 deleteButtonActionPerformed(evt);
             }
         });
-        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 90, -1));
+        kGradientPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 100, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
@@ -117,6 +129,7 @@ public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

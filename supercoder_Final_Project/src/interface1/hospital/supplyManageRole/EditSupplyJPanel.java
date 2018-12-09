@@ -27,6 +27,7 @@ public class EditSupplyJPanel extends keeptoo.KGradientPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -39,42 +40,53 @@ public class EditSupplyJPanel extends keeptoo.KGradientPanel {
         jTextField4 = new javax.swing.JTextField();
         addButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Edit Hospital Total Supply");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 460, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 460, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 120, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 160, 30));
 
         jLabel2.setText("SupplyId");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
 
         jLabel3.setText("SupplyName");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
         jLabel4.setText("SupplyQuantity");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+        kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
 
         jTextField1.setText("jTextField1");
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 200, -1));
+        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 200, -1));
 
         jTextField2.setText("jTextField1");
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 200, -1));
+        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 200, -1));
 
         jTextField3.setText("jTextField1");
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, -1));
+        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, -1));
 
         jTextField4.setText("jTextField1");
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, -1));
+        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, -1));
 
         addButton.setText("Submit");
-        add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+        kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -89,6 +101,7 @@ public class EditSupplyJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

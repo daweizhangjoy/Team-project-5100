@@ -61,6 +61,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setkStartColor(new java.awt.Color(204, 255, 255));
         container.setLayout(new java.awt.CardLayout());
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setText("Welcome to Animal Care Information System");
         container.add(jLabel3, "card2");
 
@@ -93,7 +94,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 logoutJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 100, 30));
+        jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 100, 40));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
@@ -101,7 +102,7 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 907, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

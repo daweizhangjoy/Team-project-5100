@@ -55,6 +55,7 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -62,28 +63,28 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
         customerIdTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("My Work Area -Hospital  Appointment");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 460, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 460, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
 
         jLabel2.setText("Customer Id");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 190, 80, 40));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 190, 80, 40));
 
         customerIdTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 customerIdTextFieldActionPerformed(evt);
             }
         });
-        add(customerIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 240, 30));
+        kGradientPanel1.add(customerIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 240, 30));
 
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +92,18 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
                 searchButtonActionPerformed(evt);
             }
         });
-        add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 90, 40));
+        kGradientPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 90, 40));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void customerIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerIdTextFieldActionPerformed
@@ -124,6 +136,7 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables

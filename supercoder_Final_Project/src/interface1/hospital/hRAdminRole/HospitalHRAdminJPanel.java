@@ -55,6 +55,7 @@ public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -65,18 +66,18 @@ public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
         deleteButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("My Work Area -HR Role");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, 30));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 120, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 130, 30));
 
         doctorListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,17 +97,17 @@ public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
         });
         jScrollPane1.setViewportView(doctorListTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 520, 250));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 520, 250));
 
         doctorNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doctorNameTextFieldActionPerformed(evt);
             }
         });
-        add(doctorNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 100, 30));
+        kGradientPanel1.add(doctorNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 100, 20));
 
         jLabel2.setText("Docotor Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, -1, -1));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 480, 110, 20));
 
         deleteButton.setText("delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +115,7 @@ public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
                 deleteButtonActionPerformed(evt);
             }
         });
-        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 90, -1));
+        kGradientPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 90, 30));
 
         addButton.setText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +123,18 @@ public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
                 addButtonActionPerformed(evt);
             }
         });
-        add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 90, -1));
+        kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 90, 30));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void doctorNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorNameTextFieldActionPerformed
@@ -173,6 +185,7 @@ public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 

@@ -115,6 +115,11 @@ public class ManageEnterpriseAdminJPanel extends keeptoo.KGradientPanel {
         passwordJPasswordField = new javax.swing.JPasswordField();
         backJButton = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(700, 7000));
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
+        kGradientPanel1.setPreferredSize(new java.awt.Dimension(700, 700));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(

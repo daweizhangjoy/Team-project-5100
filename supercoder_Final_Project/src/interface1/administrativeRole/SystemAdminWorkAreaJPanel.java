@@ -103,6 +103,7 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTree.setBackground(new java.awt.Color(255, 204, 255));
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
                 jTreeValueChanged(evt);
@@ -110,7 +111,7 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
         });
         jScrollPane1.setViewportView(jTree);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 184, 275));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 184, 700));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
