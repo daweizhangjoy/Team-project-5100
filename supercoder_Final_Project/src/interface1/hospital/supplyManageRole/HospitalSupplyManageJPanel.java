@@ -6,10 +6,15 @@
 package interface1.hospital.supplyManageRole;
 
 import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
+
+import Business.Enterprise.HospitalEnterprise;
+import Business.Hospital_TotalSupply.TotalSupply;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import keeptoo.KGradientPanel;
 
 /**
@@ -21,9 +26,28 @@ public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
     /**
      * Creates new form AdoptAdminJPanel
      */
-
-    public HospitalSupplyManageJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    KGradientPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    HospitalEnterprise hospitalEnterprise;
+    Network network;
+    EcoSystem business;
+    
+    public HospitalSupplyManageJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, HospitalEnterprise hospitalEnterprise, Network network, EcoSystem business) 
+    {
+        initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.hospitalEnterprise = hospitalEnterprise;
+        this.network = network;
+        this.business = business;
+        
+        populateTable();
+        
+        
     }
 
     /**
@@ -40,10 +64,12 @@ public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        supplyTable = new javax.swing.JTable();
         addButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -58,7 +84,7 @@ public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
         valueLabel.setText("<value>");
         kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 160, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        supplyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -69,11 +95,16 @@ public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
                 "SupplyId", "SupplyName", "Quantity"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(supplyTable);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, 230));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, 320));
 
         addButton.setText("Add new Supply");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
         kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, -1, -1));
 
         editButton.setText("Edit");
@@ -92,25 +123,63 @@ public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
         });
         kGradientPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 90, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = supplyTable.getSelectedRow();
+        if(selectedRow<0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
+            populateTable();
+        }
+        else
+        {
+            TotalSupply supply = (TotalSupply)supplyTable.getValueAt(selectedRow, 0);
+            
+            DistibuteSupplyJPanel muajp = new DistibuteSupplyJPanel(userProcessContainer, account, organization, hospitalEnterprise, network, business, supply);
+            userProcessContainer.add("EditSupplyJPanel", muajp);
+
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = supplyTable.getSelectedRow();
+        if(selectedRow<0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
+            populateTable();
+        }
+        else
+        {
+            int selectionButton = JOptionPane.YES_NO_OPTION;
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete??","Warning",selectionButton);
+            
+            if(selectionResult == JOptionPane.YES_OPTION)
+            {
+                TotalSupply totalSupply = (TotalSupply)supplyTable.getValueAt(selectedRow, 0);
+                hospitalEnterprise.getHospitalTotalSupplyDirectory().deleteTotalSupply(totalSupply);
+                
+                populateTable();
+            }
+            
+            populateTable();
+        }
+        
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+        AddSupplyJPanel muajp = new AddSupplyJPanel(userProcessContainer, account, organization, hospitalEnterprise, network, business);
+        userProcessContainer.add("AddSupplyJPanel", muajp);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_addButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -120,8 +189,24 @@ public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JTable supplyTable;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) supplyTable.getModel();
+        
+        model.setRowCount(0);
+        
+        for (TotalSupply supply : hospitalEnterprise.getHospitalTotalSupplyDirectory().getTotalSupplyList())
+        {
+            Object[] row = new Object[3];
+            row[0] = supply;
+            row[1] = supply.getSupplyName();
+            row[1] = supply.getSupplyQuantity();
+            
+            model.addRow(row);
+        }
+    }
 }

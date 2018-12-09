@@ -74,6 +74,8 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         addPetCaseButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -126,16 +128,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         });
         kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPetCaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPetCaseButtonActionPerformed

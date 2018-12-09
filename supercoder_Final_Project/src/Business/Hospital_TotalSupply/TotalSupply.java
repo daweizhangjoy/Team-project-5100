@@ -5,10 +5,6 @@
  */
 package Business.Hospital_TotalSupply;
 
-import Business.Shelter_TotalSupply.*;
-import Business.Communal_TotalSupply.*;
-import Business.Communal_Pet.PetDirectory;
-
 /**
  *
  * @author 15142087777的AW
@@ -17,11 +13,8 @@ public class TotalSupply {
     private String supplyName;
     private int supplyQuantity;
     private int supplyId;
-    private static int count = 1;
 
     public TotalSupply() {
-        supplyId = count;
-        count++;
     }
 
     public String getSupplyName() {
@@ -48,17 +41,9 @@ public class TotalSupply {
         this.supplyId = supplyId;
     }
 
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        TotalSupply.count = count;
-    }
-
     @Override
     public String toString() {
-        return supplyName.concat("*" + Integer.toString(supplyQuantity));
+        return String.valueOf(supplyId);
     }
     
 }

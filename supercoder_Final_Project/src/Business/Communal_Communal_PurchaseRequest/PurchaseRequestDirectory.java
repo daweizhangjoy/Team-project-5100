@@ -28,9 +28,10 @@ public class PurchaseRequestDirectory {
         this.purchaseRequestsList = purchaseRequestsList;
     }
     
-    public PurchaseRequest createPurchaseRequest(String supplyName, int supplyQuantity){
+    public PurchaseRequest createPurchaseRequest(int supplyId, String supplyName,int supplyQuantity){
         PurchaseRequest purchaseRequest = new PurchaseRequest();
         
+        purchaseRequest.setSupplyId(supplyId);
         purchaseRequest.setSupplyName(supplyName);
         purchaseRequest.setSupplyQuantity(supplyQuantity);
         

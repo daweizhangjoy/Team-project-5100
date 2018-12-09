@@ -28,9 +28,10 @@ public class TotalSupplyDirectory {
     }
 
     
-    public TotalSupply createCustomer(String supplyName, int supplyQuantity){
+    public TotalSupply createTotalSupply(int supplyId, String supplyName, int supplyQuantity){
         TotalSupply totalSupply = new TotalSupply();
         
+        totalSupply.setSupplyId(supplyId);
         totalSupply.setSupplyName(supplyName);
         totalSupply.setSupplyQuantity(supplyQuantity);
         

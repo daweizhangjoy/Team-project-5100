@@ -5,7 +5,18 @@
  */
 package interface1.shelter.SupplyManageRole;
 
-import interface1.hospital.supplyManageRole.*;
+import interface1.shelter.supplyManageRole.*;
+import Business.Communal_Communal_PurchaseRequest.PurchaseRequest;
+import Business.Communal_TotalSupply.TotalSupply;
+import Business.EcoSystem;
+import Business.Enterprise.ShelterEnterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Total_UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import keeptoo.KGradientPanel;
 
 /**
  *
@@ -16,8 +27,24 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
     /**
      * Creates new form AddSupplyJPanel
      */
-    public AddSupplyJPanel() {
+    KGradientPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    ShelterEnterprise shelterEnterprise;
+    Network network;
+    EcoSystem business;
+    
+    AddSupplyJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, ShelterEnterprise shelterEnterprise, Network network, EcoSystem business) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.shelterEnterprise = shelterEnterprise;
+        this.network = network;
+        this.business = business;
+        
+        populateTable();
     }
 
     /**
@@ -36,22 +63,20 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        addButton = new javax.swing.JButton();
+        searchByIdQuantityTextField = new javax.swing.JTextField();
+        searchByIdTextField = new javax.swing.JTextField();
+        addbyIdButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        addButton1 = new javax.swing.JButton();
+        addByNameQuantityTextField = new javax.swing.JTextField();
+        addbyNameButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        communalSupplyTable1 = new javax.swing.JTable();
+        backJButton = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(700, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -61,105 +86,299 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 130, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
 
         valueLabel.setText("<value>");
-        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 110, 30));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 130, 30));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("SupplyId");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
-
-        jLabel3.setText("SupplyName");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         jLabel4.setText("SupplyQuantity");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
-        jTextField1.setText("jTextField1");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 200, -1));
+        searchByIdQuantityTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchByIdQuantityTextFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchByIdQuantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 200, -1));
+        jPanel1.add(searchByIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 200, -1));
 
-        jTextField2.setText("jTextField1");
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 200, -1));
-
-        jTextField3.setText("jTextField1");
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 200, -1));
-
-        jTextField4.setText("jTextField1");
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 200, -1));
-
-        addButton.setText("jButton1");
-        jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
+        addbyIdButton.setText("Make Request");
+        addbyIdButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addbyIdButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(addbyIdButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 120, -1));
 
         jTabbedPane1.addTab("Add by SupplyId", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setText("SupplyId");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
-
-        jLabel6.setText("SupplyName");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
-
         jLabel7.setText("SupplyQuantity");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 90, -1));
+        jPanel2.add(addByNameQuantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 200, -1));
 
-        jTextField5.setText("jTextField1");
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 200, -1));
+        addbyNameButton.setText("Make Request");
+        addbyNameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addbyNameButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(addbyNameButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 120, -1));
 
-        jTextField6.setText("jTextField1");
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 200, -1));
+        communalSupplyTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "SupplyId", "SupplyQuantity", "SupplyName"
+            }
+        ));
+        jScrollPane1.setViewportView(communalSupplyTable1);
 
-        jTextField7.setText("jTextField1");
-        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 200, -1));
-
-        jTextField8.setText("jTextField1");
-        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 200, -1));
-
-        addButton1.setText("jButton1");
-        jPanel2.add(addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 490, 180));
 
         jTabbedPane1.addTab("Add by SupplyName", jPanel2);
 
-        kGradientPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 580, 350));
+        kGradientPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 580, 350));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addbyIdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbyIdButtonActionPerformed
+        // TODO add your handling code here:
+        if((searchByIdTextField.getText().equals("") || searchByIdQuantityTextField.getText().equals("")))
+        {
+            JOptionPane.showMessageDialog(null, "Please write in the right information!!");
+        }
+        else
+        {
+            int find = 0;
+            
+            try
+            {
+                int searchById = Integer.parseInt(searchByIdTextField.getText());
+                int quantity = Integer.parseInt(searchByIdQuantityTextField.getText());
+                
+                for(TotalSupply communalTotalSupply : network.getTotalSupplyDirectory().getTotalSupplyList())
+                {
+                    if(communalTotalSupply.getCategory().toString().equals("Medicine"))
+                    {
+                        if(searchById == communalTotalSupply.getSupplyId())/*supplyid registed*/
+                        {
+                            /*make request*/
+                            PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(searchById, communalTotalSupply.getSupplyName(),quantity);
+                            
+                            if(quantity <=  communalTotalSupply.getSupplyQuantity())
+                            {
+                                int quantityFormer = communalTotalSupply.getSupplyQuantity();
+                                communalTotalSupply.setSupplyQuantity(quantityFormer - quantity);
+                                
+                                if(shelterEnterprise.getShelterTotalSupplyDirectory().searchTotalSupply(searchById) == null)
+                                {
+                                    Business.Shelter_TotalSupply.TotalSupply newTotalSupply = 
+                                        shelterEnterprise.getShelterTotalSupplyDirectory().createTotalSupply(searchById, communalTotalSupply.getSupplyName(),quantity);
+                                    find = 1;
+                                }
+                                else
+                                {
+                                    Business.Shelter_TotalSupply.TotalSupply shelterTotalSupply
+                                            = shelterEnterprise.getShelterTotalSupplyDirectory().searchTotalSupply(searchById);
+                                    shelterTotalSupply.setSupplyQuantity(shelterTotalSupply.getSupplyQuantity() + quantity);
+                                    find = 2;
+                                }
+                                
+                                purchaseRequest.setRequestCompeledFlag(true);
+                                
+                            }
+                            else
+                            {
+                                find = 3;
+                            }
+                        }
+                    }
+                }
+                
+                switch(find)
+                {
+                    case 0:
+                    {
+                        JOptionPane.showMessageDialog(null, "Supply not exist");
+                        break;
+                    }
+                    case 1:
+                    {
+                        JOptionPane.showMessageDialog(null, "New Supply added and Supply has been transfered");
+                        break;
+                    }
+                    case 2:
+                    {
+                        JOptionPane.showMessageDialog(null, "Supply has been added to former rep");
+                        break;
+                    }
+                    case 3:
+                    {
+                        JOptionPane.showMessageDialog(null, "Supply not enough, needing to be completed");
+                        break;
+                    }
+                }
+                
+                userProcessContainer.remove(this);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.previous(userProcessContainer);        
+            }
+            catch(NumberFormatException e)
+            {
+                JOptionPane.showMessageDialog(null, "Please write in the right information!!");
+            }
+        }
+    }//GEN-LAST:event_addbyIdButtonActionPerformed
+
+    private void searchByIdQuantityTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByIdQuantityTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchByIdQuantityTextFieldActionPerformed
+
+    private void addbyNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbyNameButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = communalSupplyTable1.getSelectedRow();
+        if(selectedRow<0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
+            populateTable();
+        }
+        else
+        {
+            Business.Communal_TotalSupply.TotalSupply supply = (Business.Communal_TotalSupply.TotalSupply)communalSupplyTable1.getValueAt(selectedRow, 0);
+            
+            try 
+            {
+                int quantity = Integer.parseInt(addByNameQuantityTextField.getText());
+                PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(supply.getSupplyId(), supply.getSupplyName(),quantity);
+                            
+                int find = 2;
+                if(quantity <=  supply.getSupplyQuantity())
+                {
+                    int quantityFormer = supply.getSupplyQuantity();
+                    supply.setSupplyQuantity(quantityFormer - quantity);
+                                
+                    purchaseRequest.setRequestCompeledFlag(true);
+                    if(shelterEnterprise.getShelterTotalSupplyDirectory().searchTotalSupply(supply.getSupplyId()) == null)
+                    {
+                        Business.Shelter_TotalSupply.TotalSupply newTotalSupply = 
+                                        shelterEnterprise.getShelterTotalSupplyDirectory().createTotalSupply(supply.getSupplyId(), supply.getSupplyName(),quantity);
+                        find = 1;
+                    }
+                    else
+                    {
+                        Business.Shelter_TotalSupply.TotalSupply shelterTotalSupply
+                                 = shelterEnterprise.getShelterTotalSupplyDirectory().searchTotalSupply(supply.getSupplyId());
+                        shelterTotalSupply.setSupplyQuantity(shelterTotalSupply.getSupplyQuantity() + quantity);
+                        find = 2;
+                    }
+                                
+                    purchaseRequest.setRequestCompeledFlag(true);
+                }
+                else
+                {
+                    find = 3;
+                }
+                
+                switch(find)
+                {
+                    case 0:
+                    {
+                        JOptionPane.showMessageDialog(null, "Supply not exist");
+                        break;
+                    }
+                    case 1:
+                    {
+                        JOptionPane.showMessageDialog(null, "New Supply added and Supply has been transfered");
+                        break;
+                    }
+                    case 2:
+                    {
+                        JOptionPane.showMessageDialog(null, "Supply has been added to former rep");
+                        break;
+                    }
+                    case 3:
+                    {
+                        JOptionPane.showMessageDialog(null, "Supply not enough, needing to be completed");
+                        break;
+                    }
+                }
+                
+                userProcessContainer.remove(this);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.previous(userProcessContainer);
+            } 
+            catch (NumberFormatException e) 
+            {
+                JOptionPane.showMessageDialog(null, "Please write in the right information!!");
+            }
+        }
+    }//GEN-LAST:event_addbyNameButtonActionPerformed
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addButton;
-    private javax.swing.JButton addButton1;
+    private javax.swing.JTextField addByNameQuantityTextField;
+    private javax.swing.JButton addbyIdButton;
+    private javax.swing.JButton addbyNameButton;
+    private javax.swing.JButton backJButton;
+    private javax.swing.JTable communalSupplyTable1;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JTextField searchByIdQuantityTextField;
+    private javax.swing.JTextField searchByIdTextField;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) communalSupplyTable1.getModel();
+        
+        model.setRowCount(0);
+        
+        for (Business.Communal_TotalSupply.TotalSupply communalSupply : network.getTotalSupplyDirectory().getTotalSupplyList())
+        {
+            if(communalSupply.getCategory().toString().equals("Medicine"))
+            {
+                Object[] row = new Object[3];
+                row[0] = communalSupply;
+                row[2] = communalSupply.getSupplyName();
+                row[1] = communalSupply.getSupplyQuantity();
+            
+                model.addRow(row);
+            }
+        }
+    }
 }
