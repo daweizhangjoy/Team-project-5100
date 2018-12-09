@@ -8,23 +8,23 @@ import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author raunak
  */
-public class ManageNetworkJPanel extends javax.swing.JPanel {
+public class ManageNetworkJPanel extends keeptoo.KGradientPanel {
 
-    private JPanel userProcessContainer;
+    private KGradientPanel userProcessContainer;
     private EcoSystem system;
 
     /**
      *
      * Creates new form ManageNetworkJPanel
      */
-    public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ManageNetworkJPanel(KGradientPanel userProcessContainer, EcoSystem system) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;

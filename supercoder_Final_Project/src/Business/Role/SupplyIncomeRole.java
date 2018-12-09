@@ -13,7 +13,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
 import interface1.supply.supplyIncomeRole.SupplyIncomeJPanel;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
@@ -21,7 +21,7 @@ import javax.swing.JPanel;
  */
 public class SupplyIncomeRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public KGradientPanel createWorkArea(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         return new SupplyIncomeJPanel(userProcessContainer, account, organization, (ShelterEnterprise)enterprise, network, business);
     }
 }

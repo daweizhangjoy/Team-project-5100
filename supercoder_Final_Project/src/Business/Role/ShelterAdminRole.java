@@ -12,7 +12,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
 import interface1.shelter.adminRole.ShelterAdminJPanel;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
@@ -20,7 +20,7 @@ import javax.swing.JPanel;
  */
 public class ShelterAdminRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public KGradientPanel createWorkArea(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         return new ShelterAdminJPanel(userProcessContainer, enterprise, network, business);
     }
 }

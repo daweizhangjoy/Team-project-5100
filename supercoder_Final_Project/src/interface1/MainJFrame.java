@@ -12,6 +12,7 @@ import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import keeptoo.KGradientPanel;
 
 /**
@@ -43,6 +44,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         container = new keeptoo.KGradientPanel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new keeptoo.KGradientPanel();
         loginJButton = new javax.swing.JButton();
         userNameJTextField = new javax.swing.JTextField();
@@ -55,11 +57,17 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setDividerLocation(200);
 
-        container.setkEndColor(new java.awt.Color(204, 255, 102));
-        container.setkStartColor(new java.awt.Color(51, 255, 255));
+        container.setkEndColor(new java.awt.Color(255, 204, 255));
+        container.setkStartColor(new java.awt.Color(204, 255, 255));
         container.setLayout(new java.awt.CardLayout());
+
+        jLabel3.setText("Welcome to Animal Care Information System");
+        container.add(jLabel3, "card2");
+
         jSplitPane1.setRightComponent(container);
 
+        jPanel1.setkEndColor(new java.awt.Color(255, 204, 255));
+        jPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginJButton.setText("Login");
@@ -68,7 +76,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 loginJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(loginJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 170, 100, -1));
+        jPanel1.add(loginJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 100, -1));
         jPanel1.add(userNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 57, 118, -1));
         jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 126, 118, -1));
 
@@ -85,7 +93,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 logoutJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 233, 92, -1));
+        jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 100, 30));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
@@ -158,7 +166,7 @@ public class MainJFrame extends javax.swing.JFrame {
         else if(userAccount.getUsername().equals("sysadmin"))
         {
             CardLayout layout=(CardLayout)container.getLayout();
-            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, inNetwork, system));
+            container.add("workArea",(JPanel)userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, inNetwork, system));
             layout.next(container);
         }
         else
@@ -240,6 +248,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private keeptoo.KGradientPanel container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private keeptoo.KGradientPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginJButton;

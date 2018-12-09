@@ -14,19 +14,19 @@ import Business.Total_UserAccount.UserAccount;
 import Business.Total_UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Administrator
  */
-public class ManageUserAccountJPanel extends javax.swing.JPanel {
+public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form ManageUserAccountJPanel
      */
-    private JPanel userProcessContainer;
+    private KGradientPanel userProcessContainer;
     private Enterprise enterprise;
     private Network network;
     private EmployeeDirectory employeeDirectory;
@@ -42,7 +42,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 //        popData();
 //    }
 
-    ManageUserAccountJPanel(JPanel userProcessContainer, Network network, Enterprise enterprise, EmployeeDirectory employeeDirectory, UserAccountDirectory userAccountDirectory) {
+    ManageUserAccountJPanel(KGradientPanel userProcessContainer, Network network, Enterprise enterprise, EmployeeDirectory employeeDirectory, UserAccountDirectory userAccountDirectory) {
         initComponents();
         this.network = network;
         this.enterprise = enterprise;

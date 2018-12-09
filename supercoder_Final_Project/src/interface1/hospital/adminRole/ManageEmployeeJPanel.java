@@ -11,18 +11,18 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import Business.Total_Employee.EmployeeDirectory;
 import java.awt.CardLayout;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author raunak
  */
-public class ManageEmployeeJPanel extends javax.swing.JPanel {
+public class ManageEmployeeJPanel extends keeptoo.KGradientPanel {
 
     private OrganizationDirectory organizationDirectory;
     private EmployeeDirectory employeeDirectory;
-    private JPanel userProcessContainer;
+    private KGradientPanel userProcessContainer;
     private Network network;
     private Enterprise enterprise;
     
@@ -38,7 +38,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 //        populateOrganizationEmpComboBox();
 //    }
 
-    ManageEmployeeJPanel(JPanel userProcessContainer, Network network, Enterprise enterprise, OrganizationDirectory organizationDirectory, EmployeeDirectory employeeDirectory) {
+    ManageEmployeeJPanel(KGradientPanel userProcessContainer, Network network, Enterprise enterprise, OrganizationDirectory organizationDirectory, EmployeeDirectory employeeDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDirectory = organizationDirectory;

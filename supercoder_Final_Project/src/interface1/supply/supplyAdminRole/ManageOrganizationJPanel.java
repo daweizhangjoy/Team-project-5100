@@ -10,22 +10,22 @@ import Business.Organization.OrganizationDirectory;
 import Business.Total_Employee.EmployeeDirectory;
 import Business.Total_UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author raunak
  */
-public class ManageOrganizationJPanel extends javax.swing.JPanel {
+public class ManageOrganizationJPanel extends keeptoo.KGradientPanel {
 
     private OrganizationDirectory directory;
-    private JPanel userProcessContainer;
+    private KGradientPanel userProcessContainer;
     
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+    public ManageOrganizationJPanel(KGradientPanel userProcessContainer,OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;

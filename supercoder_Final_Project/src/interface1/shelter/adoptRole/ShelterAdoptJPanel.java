@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To chSange this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package interface1.shelter.adoptRole;
@@ -15,25 +15,25 @@ import Business.Organization.Organization;
 import interface1.hospital.patientRole.RegisterJPanel;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class ShelterAdoptJPanel extends javax.swing.JPanel {
+public class ShelterAdoptJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form ShelterAdoptJPanel
      */
-    JPanel userProcessContainer;
+    KGradientPanel userProcessContainer;
     UserAccount account;
     Organization organization;
     ShelterEnterprise shelterEnterprise;
     Network network;
     EcoSystem business;
 
-    public ShelterAdoptJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public ShelterAdoptJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;

@@ -16,18 +16,18 @@ import static java.awt.Image.SCALE_DEFAULT;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class ShelterPetKeepJPanel extends javax.swing.JPanel {
+public class ShelterPetKeepJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form ShelterPetKeepJPanel
      */
-    JPanel userProcessContainer;
+    KGradientPanel userProcessContainer;
     UserAccount account;
     Organization organization;
     ShelterEnterprise shelterEnterprise;
@@ -37,7 +37,7 @@ public class ShelterPetKeepJPanel extends javax.swing.JPanel {
     private static String path;
     private static String name;
 
-    public ShelterPetKeepJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, ShelterEnterprise shelterEnterprise, Network network, EcoSystem business) {
+    public ShelterPetKeepJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, ShelterEnterprise shelterEnterprise, Network network, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;

@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
@@ -37,7 +37,7 @@ public abstract class Role {
         }
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
+    public abstract KGradientPanel createWorkArea(KGradientPanel userProcessContainer, 
             UserAccount account, 
             Organization organization, 
             Enterprise enterprise, 

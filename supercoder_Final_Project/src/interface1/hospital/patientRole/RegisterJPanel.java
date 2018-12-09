@@ -15,19 +15,19 @@ import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class RegisterJPanel extends javax.swing.JPanel {
+public class RegisterJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form RegisterJPanel
      */
-    JPanel userProcessContainer;
+    KGradientPanel userProcessContainer;
     UserAccount account;
     Organization organization;
     HospitalEnterprise hospitalEnterprise;
@@ -35,7 +35,7 @@ public class RegisterJPanel extends javax.swing.JPanel {
     EcoSystem business;
     Customer customer;
 
-    RegisterJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, HospitalEnterprise hospitalEnterprise, Network network, EcoSystem business, Customer customer) {
+    RegisterJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, HospitalEnterprise hospitalEnterprise, Network network, EcoSystem business, Customer customer) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;

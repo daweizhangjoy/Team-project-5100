@@ -11,13 +11,13 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class ShelterSupplyManageJPanel extends javax.swing.JPanel {
+public class ShelterSupplyManageJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form AdoptAdminJPanel
@@ -26,11 +26,11 @@ public class ShelterSupplyManageJPanel extends javax.swing.JPanel {
         initComponents();
     }
 
-    public ShelterSupplyManageJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+    public ShelterSupplyManageJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
     }
 
-    public ShelterSupplyManageJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public ShelterSupplyManageJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -12,7 +12,7 @@ import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
 import interface1.hospital.adminRole.HospitalAdminJPanel;
 
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
@@ -20,7 +20,7 @@ import javax.swing.JPanel;
  */
 public class HospitalAdminRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public KGradientPanel createWorkArea(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         return new HospitalAdminJPanel(userProcessContainer, enterprise, network, business);
     }
 }

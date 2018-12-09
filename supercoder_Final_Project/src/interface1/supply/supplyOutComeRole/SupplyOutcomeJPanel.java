@@ -10,13 +10,13 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class SupplyOutcomeJPanel extends javax.swing.JPanel {
+public class SupplyOutcomeJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form SupplyOutcomeJPanel
@@ -25,11 +25,11 @@ public class SupplyOutcomeJPanel extends javax.swing.JPanel {
         initComponents();
     }
 
-    public SupplyOutcomeJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+    public SupplyOutcomeJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public SupplyOutcomeJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public SupplyOutcomeJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

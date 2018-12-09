@@ -10,19 +10,19 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class HospitalSupplyManageJPanel extends javax.swing.JPanel {
+public class HospitalSupplyManageJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form AdoptAdminJPanel
      */
 
-    public HospitalSupplyManageJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+    public HospitalSupplyManageJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

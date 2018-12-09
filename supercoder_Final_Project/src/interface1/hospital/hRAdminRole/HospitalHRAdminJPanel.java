@@ -15,26 +15,26 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class HospitalHRAdminJPanel extends javax.swing.JPanel {
+public class HospitalHRAdminJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form HospitalHRAdminJPanel
      */
-    JPanel userProcessContainer;
+    KGradientPanel userProcessContainer;
     UserAccount account;
     Organization organization;
     HospitalEnterprise hospitalEnterprise;
     Network network;
     EcoSystem business;
 
-    public HospitalHRAdminJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, HospitalEnterprise hospitalEnterprise, Network network, EcoSystem business) {
+    public HospitalHRAdminJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, HospitalEnterprise hospitalEnterprise, Network network, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;

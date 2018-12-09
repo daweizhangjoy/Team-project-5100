@@ -10,22 +10,22 @@ import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author raunak
  */
-public class ManageEnterpriseJPanel extends javax.swing.JPanel {
+public class ManageEnterpriseJPanel extends keeptoo.KGradientPanel {
 
-    private JPanel userProcessContainer;
+    private KGradientPanel userProcessContainer;
     private EcoSystem system;
 
     /**
      * Creates new form ManageEnterpriseJPanel
      */
-    public ManageEnterpriseJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ManageEnterpriseJPanel(KGradientPanel userProcessContainer, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;

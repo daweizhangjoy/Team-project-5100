@@ -11,7 +11,7 @@ import interface1.hospital.supplyManageRole.*;
  *
  * @author 15142087777的AW
  */
-public class EditSupplyJPanel extends javax.swing.JPanel {
+public class EditSupplyJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form EditSupplyJPanel

@@ -16,19 +16,19 @@ import java.awt.CardLayout;
 import static java.awt.Image.SCALE_DEFAULT;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author 15142087777的AW
  */
-public class SelectPetJPanel extends javax.swing.JPanel {
+public class SelectPetJPanel extends keeptoo.KGradientPanel {
 
     /**
      * Creates new form SelectPetJPanel
      */
-    JPanel userProcessContainer;
+    KGradientPanel userProcessContainer;
     UserAccount account;
     Organization organization;
     ShelterEnterprise shelterEnterprise;
@@ -36,7 +36,7 @@ public class SelectPetJPanel extends javax.swing.JPanel {
     EcoSystem business;
     Customer customer;
     
-    SelectPetJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, ShelterEnterprise shelterEnterprise, Network network, EcoSystem business, Customer customer) {
+    SelectPetJPanel(KGradientPanel userProcessContainer, UserAccount account, Organization organization, ShelterEnterprise shelterEnterprise, Network network, EcoSystem business, Customer customer) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
