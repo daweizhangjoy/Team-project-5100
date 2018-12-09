@@ -5,7 +5,6 @@
  */
 package interface1.shelter.SupplyManageRole;
 
-import interface1.shelter.supplyManageRole.*;
 import Business.Communal_Communal_PurchaseRequest.PurchaseRequest;
 import Business.Communal_TotalSupply.TotalSupply;
 import Business.EcoSystem;

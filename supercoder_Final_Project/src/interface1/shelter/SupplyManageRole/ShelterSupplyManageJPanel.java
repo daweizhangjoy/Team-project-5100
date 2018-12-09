@@ -5,7 +5,6 @@
  */
 package interface1.shelter.SupplyManageRole;
 
-import interface1.shelter.supplyManageRole.*;
 import Business.EcoSystem;
 
 import Business.Enterprise.ShelterEnterprise;
