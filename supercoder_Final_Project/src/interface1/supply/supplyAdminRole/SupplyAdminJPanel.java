@@ -46,14 +46,6 @@ public class SupplyAdminJPanel extends keeptoo.KGradientPanel {
         manageOrganizationJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
-        kGradientPanel3 = new keeptoo.KGradientPanel();
-        jLabel2 = new javax.swing.JLabel();
-        userJButton1 = new javax.swing.JButton();
-        manageEmployeeJButton1 = new javax.swing.JButton();
-        manageOrganizationJButton1 = new javax.swing.JButton();
-        enterpriseLabel1 = new javax.swing.JLabel();
-        valueLabel1 = new javax.swing.JLabel();
 
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -92,73 +84,15 @@ public class SupplyAdminJPanel extends keeptoo.KGradientPanel {
         valueLabel.setText("<value>");
         kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 130, -1));
 
-        kGradientPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("My Work Area -Adminstrative Role");
-        kGradientPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
-
-        userJButton1.setText("Manage User");
-        userJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userJButton1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel3.add(userJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 150, -1));
-
-        manageEmployeeJButton1.setText("Manage Employee");
-        manageEmployeeJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageEmployeeJButton1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel3.add(manageEmployeeJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 150, -1));
-
-        manageOrganizationJButton1.setText("Manage Organization");
-        manageOrganizationJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrganizationJButton1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel3.add(manageOrganizationJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, -1));
-
-        enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel1.setText("EnterPrise :");
-        kGradientPanel3.add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 120, 30));
-
-        valueLabel1.setText("<value>");
-        kGradientPanel3.add(valueLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 130, -1));
-
-        javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
-        kGradientPanel2.setLayout(kGradientPanel2Layout);
-        kGradientPanel2Layout.setHorizontalGroup(
-            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        kGradientPanel2Layout.setVerticalGroup(
-            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -188,36 +122,16 @@ public class SupplyAdminJPanel extends keeptoo.KGradientPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
-
-    private void userJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userJButton1ActionPerformed
-
-    private void manageEmployeeJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_manageEmployeeJButton1ActionPerformed
-
-    private void manageOrganizationJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_manageOrganizationJButton1ActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
-    private keeptoo.KGradientPanel kGradientPanel3;
     private javax.swing.JButton manageEmployeeJButton;
-    private javax.swing.JButton manageEmployeeJButton1;
     private javax.swing.JButton manageOrganizationJButton;
-    private javax.swing.JButton manageOrganizationJButton1;
     private javax.swing.JButton userJButton;
-    private javax.swing.JButton userJButton1;
     private javax.swing.JLabel valueLabel;
-    private javax.swing.JLabel valueLabel1;
     // End of variables declaration//GEN-END:variables
     
 }

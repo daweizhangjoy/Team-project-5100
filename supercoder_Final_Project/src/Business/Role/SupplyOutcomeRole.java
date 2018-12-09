@@ -11,7 +11,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.ShelterEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import interface1.supply.supplyOutComeRole.SupplyOutcomeJPanel;
+import interface1.supply.supplyDataAnalyseRole.SupplyDataAnalysisJPanel;
 import keeptoo.KGradientPanel;
 
 /**
@@ -21,6 +21,6 @@ import keeptoo.KGradientPanel;
 public class SupplyOutcomeRole extends Role{
     @Override
     public KGradientPanel createWorkArea(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
-        return new SupplyOutcomeJPanel(userProcessContainer, account, organization, (ShelterEnterprise)enterprise, network, business);
+        return new SupplyDataAnalysisJPanel(userProcessContainer, account, organization, (ShelterEnterprise)enterprise, network, business);
     }
 }
