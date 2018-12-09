@@ -10,6 +10,7 @@ import Business.Communal_Communal_PurchaseRequest.PurchaseRequest;
 import Business.Communal_TotalSupply.TotalSupply;
 import Business.EcoSystem;
 import Business.Enterprise.ShelterEnterprise;
+import Business.Enterprise.SupplyEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
@@ -178,12 +179,12 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
                 
                 for(TotalSupply communalTotalSupply : network.getTotalSupplyDirectory().getTotalSupplyList())
                 {
-                    if(communalTotalSupply.getCategory().toString().equals("Medicine"))
+                    if((communalTotalSupply.getCategory().toString().equals("Food")) || (communalTotalSupply.getCategory().toString().equals("Accessory")))
                     {
                         if(searchById == communalTotalSupply.getSupplyId())/*supplyid registed*/
                         {
                             /*make request*/
-                            PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(searchById, communalTotalSupply.getSupplyName(),quantity);
+                            PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(searchById, communalTotalSupply.getSupplyName(),quantity, shelterEnterprise.getEnterpriseID());
                             
                             if(quantity <=  communalTotalSupply.getSupplyQuantity())
                             {
@@ -269,7 +270,7 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
             try 
             {
                 int quantity = Integer.parseInt(addByNameQuantityTextField.getText());
-                PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(supply.getSupplyId(), supply.getSupplyName(),quantity);
+                PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(supply.getSupplyId(), supply.getSupplyName(),quantity, shelterEnterprise.getEnterpriseID());
                             
                 int find = 2;
                 if(quantity <=  supply.getSupplyQuantity())
@@ -370,7 +371,7 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
         
         for (Business.Communal_TotalSupply.TotalSupply communalSupply : network.getTotalSupplyDirectory().getTotalSupplyList())
         {
-            if(communalSupply.getCategory().toString().equals("Medicine"))
+            if((communalSupply.getCategory().toString().equals("Food")) || (communalSupply.getCategory().toString().equals("Accessory")))
             {
                 Object[] row = new Object[3];
                 row[0] = communalSupply;

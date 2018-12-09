@@ -27,7 +27,9 @@ public abstract class Enterprise extends Organization{
         super(name);
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
+        
         enterpriseID = counter1;
+        
         ++counter1;
     }
     

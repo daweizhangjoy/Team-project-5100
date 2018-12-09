@@ -182,7 +182,7 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
                         if(searchById == communalTotalSupply.getSupplyId())/*supplyid registed*/
                         {
                             /*make request*/
-                            PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(searchById, communalTotalSupply.getSupplyName(),quantity);
+                            PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(searchById, communalTotalSupply.getSupplyName(),quantity,hospitalEnterprise.getEnterpriseID());
                             
                             if(quantity <=  communalTotalSupply.getSupplyQuantity())
                             {
@@ -268,7 +268,7 @@ public class AddSupplyJPanel extends keeptoo.KGradientPanel {
             try 
             {
                 int quantity = Integer.parseInt(addByNameQuantityTextField.getText());
-                PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(supply.getSupplyId(), supply.getSupplyName(),quantity);
+                PurchaseRequest purchaseRequest = network.getPurchaseRequestDirectory().createPurchaseRequest(supply.getSupplyId(), supply.getSupplyName(),quantity, hospitalEnterprise.getEnterpriseID());
                             
                 int find = 2;
                 if(quantity <=  supply.getSupplyQuantity())

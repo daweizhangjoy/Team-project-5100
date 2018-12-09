@@ -19,7 +19,7 @@ public class TotalSupply {
     
     public enum Category
     {
-        MEDICINE("Medicine", 1), FOOD("Food", 2), ACCESORRY("白色", 3);  
+        MEDICINE("Medicine", 1), FOOD("Food", 2), ACCESORRY("Accessory", 3);  
         // 成员变量  
         private String name;  
         private int index;  

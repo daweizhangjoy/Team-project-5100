@@ -19,6 +19,7 @@ public class PurchaseRequest {
     private int supplyQuantity;
     private int purchaseRequestId;
     private boolean requestCompeledFlag;
+    private int enterpriseNum;
     private Date date;
     private static int count = 1;
 
@@ -77,10 +78,26 @@ public class PurchaseRequest {
     public void setSupplyId(int supplyId) {
         this.supplyId = supplyId;
     }
+
+    public int getEnterpriseNum() {
+        return enterpriseNum;
+    }
+
+    public void setEnterpriseNum(int enterpriseNum) {
+        this.enterpriseNum = enterpriseNum;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
     
     @Override
     public String toString() {
-        return supplyName.concat("*" + Integer.toString(supplyQuantity));
+        return String.valueOf(purchaseRequestId);
     }
     
     
