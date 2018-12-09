@@ -62,7 +62,10 @@ public class ManageNetworkJPanel extends keeptoo.KGradientPanel {
         backJButton = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(700, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
         kGradientPanel1.setMinimumSize(new java.awt.Dimension(700, 700));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(700, 700));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,7 +101,7 @@ public class ManageNetworkJPanel extends keeptoo.KGradientPanel {
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 63, 404, 150));
 
         jLabel1.setText("Name");
-        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 257, -1, -1));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +109,8 @@ public class ManageNetworkJPanel extends keeptoo.KGradientPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 253, -1, -1));
-        kGradientPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 254, 93, -1));
+        kGradientPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
+        kGradientPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 93, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,18 +118,9 @@ public class ManageNetworkJPanel extends keeptoo.KGradientPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 356, -1, -1));
+        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

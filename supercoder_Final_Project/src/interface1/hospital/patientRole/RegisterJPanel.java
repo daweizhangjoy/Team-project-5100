@@ -74,8 +74,12 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         addPetCaseButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(700, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
+        kGradientPanel1.setPreferredSize(new java.awt.Dimension(700, 700));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -84,10 +88,10 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 120, 30));
 
         valueLabel.setText("<value>");
-        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 130, -1));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Customer Name:");
@@ -118,7 +122,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
                 addPetCaseButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(addPetCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 479, 120, 30));
+        kGradientPanel1.add(addPetCaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 479, 150, 30));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {

@@ -60,6 +60,8 @@ public class PictureJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 204));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         kGradientPanel1.add(viewPicturejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 600, 600));
 

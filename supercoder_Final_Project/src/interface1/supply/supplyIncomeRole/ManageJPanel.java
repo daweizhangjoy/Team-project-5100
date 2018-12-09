@@ -69,6 +69,8 @@ public class ManageJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -111,7 +113,7 @@ public class ManageJPanel extends javax.swing.JPanel {
                 addButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 493, 100, 40));
+        kGradientPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 493, 150, 40));
 
         manageDetailButton.setText("Manage Supply");
         manageDetailButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +121,7 @@ public class ManageJPanel extends javax.swing.JPanel {
                 manageDetailButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(manageDetailButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 493, 120, 40));
+        kGradientPanel1.add(manageDetailButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 493, 160, 40));
 
         backJButton2.setText("<< Back");
         backJButton2.addActionListener(new java.awt.event.ActionListener() {

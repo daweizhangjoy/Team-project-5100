@@ -62,7 +62,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setLayout(new java.awt.CardLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel3.setText("Welcome to Animal Care Information System");
+        jLabel3.setText("Welcome to AnimalCare Information System");
         container.add(jLabel3, "card2");
 
         jSplitPane1.setRightComponent(container);

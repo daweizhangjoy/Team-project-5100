@@ -93,7 +93,8 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
         btnManageEnterprise = new javax.swing.JButton();
         btnManageAdmin = new javax.swing.JButton();
 
-        setLayout(new java.awt.BorderLayout());
+        setPreferredSize(new java.awt.Dimension(700, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSplitPane1.setDividerLocation(200);
         jSplitPane1.setDividerSize(0);
@@ -101,9 +102,11 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
         jSplitPane1.setMinimumSize(new java.awt.Dimension(600, 600));
         jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 700));
 
+        jPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        jPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTree.setBackground(new java.awt.Color(255, 204, 255));
+        jTree.setBackground(new java.awt.Color(204, 255, 255));
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
                 jTreeValueChanged(evt);
@@ -115,6 +118,8 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        jPanel2.setkEndColor(new java.awt.Color(255, 204, 204));
+        jPanel2.setkStartColor(new java.awt.Color(204, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Selected Node:");
@@ -129,7 +134,7 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
                 btnManageNetworkActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 99, 210, -1));
+        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 99, 240, -1));
 
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +142,7 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
                 btnManageEnterpriseActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 146, 210, -1));
+        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 146, 240, -1));
 
         btnManageAdmin.setText("Manage Enterprise Admin");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -145,11 +150,11 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
                 btnManageAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 193, 210, -1));
+        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 193, 240, -1));
 
         jSplitPane1.setRightComponent(jPanel2);
 
-        add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNetworkActionPerformed

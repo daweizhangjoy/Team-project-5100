@@ -63,6 +63,12 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
         customerIdTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(700, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
+        kGradientPanel1.setPreferredSize(new java.awt.Dimension(700, 700));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -77,14 +83,14 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
         kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
 
         jLabel2.setText("Customer Id");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 190, 80, 40));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 190, 100, 40));
 
         customerIdTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 customerIdTextFieldActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(customerIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 240, 30));
+        kGradientPanel1.add(customerIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 240, 30));
 
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -92,18 +98,9 @@ public class HospitalPatientJPanel extends keeptoo.KGradientPanel {
                 searchButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 90, 40));
+        kGradientPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 90, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
-        );
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void customerIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerIdTextFieldActionPerformed

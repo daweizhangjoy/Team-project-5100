@@ -127,6 +127,12 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
 
+        setPreferredSize(new java.awt.Dimension(700, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
+        kGradientPanel1.setPreferredSize(new java.awt.Dimension(700, 700));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createUserJButton.setText("Create");
@@ -135,7 +141,7 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
                 createUserJButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 424, -1, -1));
+        kGradientPanel1.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 110, -1));
         kGradientPanel1.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 240, -1));
 
         jLabel1.setText("User Name");
@@ -185,7 +191,7 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
                 backjButton1ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 436, 112, -1));
+        kGradientPanel1.add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 112, -1));
 
         jLabel5.setText("Organization");
         kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
@@ -209,16 +215,7 @@ public class ManageUserAccountJPanel extends keeptoo.KGradientPanel {
         });
         kGradientPanel1.add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 240, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
+        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
