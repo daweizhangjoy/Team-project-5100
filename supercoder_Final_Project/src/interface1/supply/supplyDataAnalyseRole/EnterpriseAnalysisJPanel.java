@@ -66,8 +66,9 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         generateButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -93,7 +94,12 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
         kGradientPanel1.add(backJButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        kGradientPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 370, 50));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 370, 50));
 
         jLabel2.setText("Select a company from below and show the specific supply requirement situation");
         kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, 70));
@@ -106,7 +112,11 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
         });
         kGradientPanel1.add(generateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
+        jLabel3.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        jLabel3.setText("jLabel3");
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 370, 30));
+
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton2ActionPerformed
@@ -118,7 +128,7 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
 
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         // TODO add your handling code here:
-        Enterprise enterprise1 = (Enterprise) jComboBox1.getSelectedItem();
+        Enterprise enterprise1 = network.getEnterpriseDirectory().searchEnterprise(Integer.parseInt((String) jComboBox1.getSelectedItem()));
         
         Font font = new Font("新宋体", Font.BOLD, 15);
         
@@ -149,6 +159,12 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_generateButtonActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+//        Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprise(Integer.parseInt((String) jComboBox1.getSelectedItem()));
+//        jLabel3.setText(enterprise.getName());
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton2;
@@ -157,6 +173,7 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
@@ -168,7 +185,7 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
         for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList())
         {
 //            jComboBox1.addItem("No." + String.valueOf(enterprise.getEnterpriseID()) + " " + enterprise.getName());
-            jComboBox1.addItem(enterprise.toString());
+            jComboBox1.addItem(String.valueOf(enterprise.getEnterpriseID()));
         }
     }
 }

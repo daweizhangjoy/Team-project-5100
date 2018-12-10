@@ -6,6 +6,9 @@
 package interface1.supply.supplyIncomeRole;
 
 import Business.Communal_TotalSupply.TotalSupply.Category;
+import static Business.Communal_TotalSupply.TotalSupply.Category.ACCESORRY;
+import static Business.Communal_TotalSupply.TotalSupply.Category.FOOD;
+import static Business.Communal_TotalSupply.TotalSupply.Category.MEDICINE;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -68,7 +71,7 @@ public class ManageDetailJPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         addButton1 = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -115,7 +118,7 @@ public class ManageDetailJPanel extends javax.swing.JPanel {
         });
         kGradientPanel1.add(addButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 230, 50));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton2ActionPerformed
@@ -138,10 +141,24 @@ public class ManageDetailJPanel extends javax.swing.JPanel {
                 String name = nameTextField.getText();
                 int quantity = Integer.parseInt(quantityTextField.getText());
                 
-                Category category = (Category) jComboBox1.getSelectedItem();
-                
+//                Category category = jComboBox1.getSelectedItem();
                 Business.Communal_TotalSupply.TotalSupply totalSupply = network.getTotalSupplyDirectory().createCustomer(name, quantity);
-                totalSupply.setCategory(category);
+
+                if(jComboBox1.getSelectedItem().equals("Medicine"))
+                {
+                    totalSupply.setCategory(MEDICINE);;
+                }
+                else if(jComboBox1.getSelectedItem().equals("Food"))
+                {
+                    totalSupply.setCategory(FOOD);
+                }
+                else if(jComboBox1.getSelectedItem().equals("Accessory"))
+                {
+                    totalSupply.setCategory(ACCESORRY);
+                }
+                
+                
+                
                 
                 JOptionPane.showMessageDialog(null, "Add successful!!");
                 

@@ -55,10 +55,9 @@ public class SupplyDataAnalysisJPanel extends keeptoo.KGradientPanel {
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        supplyButton = new javax.swing.JButton();
         enterpriseButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -75,32 +74,16 @@ public class SupplyDataAnalysisJPanel extends keeptoo.KGradientPanel {
         valueLabel.setText("<value>");
         kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 130, -1));
 
-        supplyButton.setText("Analysis Supply");
-        supplyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                supplyButtonActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(supplyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 180, 90));
-
         enterpriseButton.setText("Analysis Enterprise");
         enterpriseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpriseButtonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(enterpriseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 180, 90));
+        kGradientPanel1.add(enterpriseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 180, 90));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
-
-    private void supplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supplyButtonActionPerformed
-        // TODO add your handling code here:
-        SupplyRequireAnalysisJPanel supplyRequireAnalysisJPanel = new SupplyRequireAnalysisJPanel(userProcessContainer, account, organization, enterprise, network, business);
-        userProcessContainer.add("supplyRequireAnalysisJPanel", supplyRequireAnalysisJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_supplyButtonActionPerformed
 
     private void enterpriseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseButtonActionPerformed
         // TODO add your handling code here:
@@ -116,7 +99,6 @@ public class SupplyDataAnalysisJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private keeptoo.KGradientPanel kGradientPanel1;
-    private javax.swing.JButton supplyButton;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

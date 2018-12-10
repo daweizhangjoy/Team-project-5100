@@ -170,7 +170,7 @@ public class MainJFrame extends javax.swing.JFrame {
             inEnterprise = system.getNetworkDirectory().searchNetwork(userAccount.getNetworkID()).getEnterpriseDirectory().searchEnterprise(userAccount.getEnterpriseID());
             
             CardLayout layout=(CardLayout)container.getLayout();
-            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, inNetwork, system));
+            container.add("workArea",(JPanel)userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, inNetwork, system));
             layout.next(container);
         }
         
@@ -194,10 +194,11 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
+        dB4OUtil.storeSystem(system);
 //        container.remove(this);
 //        CardLayout layout = (CardLayout) container.getLayout();
 //        layout.previous(container);
-//        dB4OUtil.storeSystem(system);
+//        
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     /**

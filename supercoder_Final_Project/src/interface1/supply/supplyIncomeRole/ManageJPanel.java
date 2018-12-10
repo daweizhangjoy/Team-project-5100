@@ -67,7 +67,7 @@ public class ManageJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -135,7 +135,7 @@ public class ManageJPanel extends javax.swing.JPanel {
         kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 435, 70, 30));
         kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 100, -1));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageDetailButtonActionPerformed

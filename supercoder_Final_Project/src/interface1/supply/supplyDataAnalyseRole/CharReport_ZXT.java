@@ -106,51 +106,51 @@ public class CharReport_ZXT {
             }
      }
     
-    public static void main(String[] args) {
-        
-        Map<String, Map<String, Double>> datas =new HashMap<String, Map<String,Double>>();
-        
-        Map<String, Double> map1=new HashMap<String, Double>();
-        Map<String, Double> map2=new HashMap<String, Double>();
-        Map<String, Double> map3=new HashMap<String, Double>();
-        Map<String, Double> map4=new HashMap<String, Double>();
-      
-        //设置第一期的投票信息
-        
-         map1.put("蔷薇", (double) 700);
-         map1.put("彦", (double) 1000);
-         map1.put("蕾娜", (double) 600);
-         map1.put("琴女", (double) 400);    
-         
-        //设置第二期的投票信息
-         map2.put("蔷薇", (double) 900);
-         map2.put("彦", (double) 2000);
-         map2.put("蕾娜", (double) 800);
-         map2.put("琴女", (double) 500);    
-         
-        //设置第三期的投票信息
-         map3.put("蔷薇", (double) 1700);
-         map3.put("彦", (double) 1000);
-         map3.put("蕾娜", (double) 1400);
-         map3.put("琴女", (double) 1000);    
-         
-        //设置第四期的投票信息
-         map4.put("蔷薇", (double) 2500);
-         map4.put("彦", (double) 3000);
-         map4.put("蕾娜", (double) 1600);
-         map4.put("琴女", (double) 1400);    
-         
-         //压入数据
-         datas.put("第一季", map1);
-         datas.put("第二季", map2);
-         datas.put("第三季", map3);
-         datas.put("第四季", map4);
-
-      
-
-        Font font = new Font("宋体", Font.BOLD, 20);
-        CharReport_ZXT.createPort("超神学院前四季最受欢迎的女性角色投票结果",datas,"超神纪元","数量单位（票）",font);
-        
-    }
+//    public static void main(String[] args) {
+//        
+//        Map<String, Map<String, Double>> datas =new HashMap<String, Map<String,Double>>();
+//        
+//        Map<String, Double> map1=new HashMap<String, Double>();
+//        Map<String, Double> map2=new HashMap<String, Double>();
+//        Map<String, Double> map3=new HashMap<String, Double>();
+//        Map<String, Double> map4=new HashMap<String, Double>();
+//      
+//        //设置第一期的投票信息
+//        
+//         map1.put("蔷薇", (double) 700);
+//         map1.put("彦", (double) 1000);
+//         map1.put("蕾娜", (double) 600);
+//         map1.put("琴女", (double) 400);    
+//         
+//        //设置第二期的投票信息
+//         map2.put("蔷薇", (double) 900);
+//         map2.put("彦", (double) 2000);
+//         map2.put("蕾娜", (double) 800);
+//         map2.put("琴女", (double) 500);    
+//         
+//        //设置第三期的投票信息
+//         map3.put("蔷薇", (double) 1700);
+//         map3.put("彦", (double) 1000);
+//         map3.put("蕾娜", (double) 1400);
+//         map3.put("琴女", (double) 1000);    
+//         
+//        //设置第四期的投票信息
+//         map4.put("蔷薇", (double) 2500);
+//         map4.put("彦", (double) 3000);
+//         map4.put("蕾娜", (double) 1600);
+//         map4.put("琴女", (double) 1400);    
+//         
+//         //压入数据
+//         datas.put("第一季", map1);
+//         datas.put("第二季", map2);
+//         datas.put("第三季", map3);
+//         datas.put("第四季", map4);
+//
+//      
+//
+//        Font font = new Font("宋体", Font.BOLD, 20);
+//        CharReport_ZXT.createPort("超神学院前四季最受欢迎的女性角色投票结果",datas,"超神纪元","数量单位（票）",font);
+//        
+//    }
 
 }

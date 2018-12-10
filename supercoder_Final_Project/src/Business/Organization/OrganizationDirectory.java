@@ -15,7 +15,7 @@ import Business.Organization.Shelter.ShelterPetKeepOrganization;
 import Business.Organization.Shelter.ShelterSupplyManageOrganization;
 import Business.Organization.Supply.SupplyAdminOrganization;
 import Business.Organization.Supply.SupplyIncomeOrganization;
-import Business.Organization.Supply.SupplyOutcomeOrganization;
+import Business.Organization.Supply.SupplyDataAnalsisOrganization;
 import java.util.ArrayList;
 
 /**
@@ -91,9 +91,9 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
         
-        else if (type.getValue().equals(Type.SupplyOutcome.getValue()))
+        else if (type.getValue().equals(Type.SupplyDataAnalysis.getValue()))
         {
-            organization = new SupplyOutcomeOrganization();
+            organization = new SupplyDataAnalsisOrganization();
             organizationList.add(organization);
         }
         

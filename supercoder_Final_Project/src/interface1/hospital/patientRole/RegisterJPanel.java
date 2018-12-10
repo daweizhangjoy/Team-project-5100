@@ -75,7 +75,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         backJButton = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(700, 700));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -132,7 +132,7 @@ public class RegisterJPanel extends keeptoo.KGradientPanel {
         });
         kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPetCaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPetCaseButtonActionPerformed

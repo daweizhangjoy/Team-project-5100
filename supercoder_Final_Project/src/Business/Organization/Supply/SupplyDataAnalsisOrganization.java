@@ -13,10 +13,10 @@ import java.util.ArrayList;
  *
  * @author 15142087777的AW
  */
-public class SupplyOutcomeOrganization extends SupplyOrganization{
+public class SupplyDataAnalsisOrganization extends SupplyOrganization{
 
-    public SupplyOutcomeOrganization() {
-        super(Type.SupplyOutcome.getValue());
+    public SupplyDataAnalsisOrganization() {
+        super(Type.SupplyDataAnalysis.getValue());
     }
     
     @Override

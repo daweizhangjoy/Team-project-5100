@@ -56,7 +56,7 @@ public class SupplyIncomeJPanel extends keeptoo.KGradientPanel
         completeButton = new javax.swing.JButton();
         completeButton1 = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -89,7 +89,7 @@ public class SupplyIncomeJPanel extends keeptoo.KGradientPanel
         });
         kGradientPanel1.add(completeButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 220, 50));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 710));
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void completeButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeButton1ActionPerformed

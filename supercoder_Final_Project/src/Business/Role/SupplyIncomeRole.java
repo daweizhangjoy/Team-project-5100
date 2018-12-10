@@ -9,6 +9,7 @@ import Business.Total_UserAccount.UserAccount;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.ShelterEnterprise;
+import Business.Enterprise.SupplyEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import interface1.hospital.hRAdminRole.HospitalHRAdminJPanel;
@@ -22,6 +23,6 @@ import keeptoo.KGradientPanel;
 public class SupplyIncomeRole extends Role{
     @Override
     public KGradientPanel createWorkArea(KGradientPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
-        return new SupplyIncomeJPanel(userProcessContainer, account, organization, (ShelterEnterprise)enterprise, network, business);
+        return new SupplyIncomeJPanel(userProcessContainer, account, organization, (SupplyEnterprise)enterprise, network, business);
     }
 }

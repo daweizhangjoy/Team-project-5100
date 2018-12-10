@@ -38,7 +38,7 @@ public abstract class Organization {
     public enum Type{
         HospitalHRAdmin("HRAdmin Organization"), HospitalAdmin("HospitalAdmin Organization"), HospitalPatient("HospitalPatient Organization"), HospitalSupplyManage("HospitalSupplyManage Organization"), 
         ShelterAdopt("ShelterAdopt Organization"), ShelterAdmin("ShelterAdmin Organization"), ShelterPetKeep("ShelterPetKeep Organization"), ShelterSupplyManage("ShelterSupplyManage Organization"), 
-        SupplyIncome("SupplyIncome Organization"), SupplyOutcome("SupplyOutcome Organization"), SupplyAdmin("SupplyAdmin Organization");
+        SupplyIncome("SupplyIncome Organization"), SupplyDataAnalysis("SupplyDataAnalysis Organization"), SupplyAdmin("SupplyAdmin Organization");
         private String value;
         private Type(String value) {
             this.value = value;

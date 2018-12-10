@@ -57,19 +57,71 @@ public class ShelterPetKeepJPanel extends keeptoo.KGradientPanel {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
+        jLabel1 = new javax.swing.JLabel();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+        addNameTextField = new javax.swing.JTextField();
+        insertPicture = new javax.swing.JButton();
+        pathTextField = new javax.swing.JTextField();
+        pictureJLabel = new javax.swing.JLabel();
+        createButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
 
+        setLayout(new java.awt.CardLayout());
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("My Work Area - Add Pet");
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 340, -1));
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("EnterPrise :");
+        kGradientPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 120, 30));
+
+        valueLabel.setText("<value>");
+        kGradientPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 130, -1));
+        kGradientPanel1.add(addNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 160, 40));
+
+        insertPicture.setText("Update Your Picture");
+        insertPicture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertPictureActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(insertPicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, -1, -1));
+
+        pathTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pathTextFieldActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(pathTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 150, -1));
+        kGradientPanel1.add(pictureJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 110, 120));
+
+        createButton1.setText("Create");
+        createButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createButton1ActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 100, 30));
+
+        jLabel2.setText("Edit Name");
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 30));
+
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void insertPictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertPictureActionPerformed
@@ -131,7 +183,6 @@ public class ShelterPetKeepJPanel extends keeptoo.KGradientPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JTextField addNameTextField;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton createButton1;
@@ -139,6 +190,7 @@ public class ShelterPetKeepJPanel extends keeptoo.KGradientPanel {
     private javax.swing.JButton insertPicture;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JTextField pathTextField;
     private javax.swing.JLabel pictureJLabel;
     private javax.swing.JLabel valueLabel;

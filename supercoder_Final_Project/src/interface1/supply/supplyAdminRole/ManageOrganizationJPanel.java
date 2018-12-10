@@ -38,7 +38,7 @@ public class ManageOrganizationJPanel extends keeptoo.KGradientPanel {
         organizationJComboBox.removeAllItems();
         for (Type type : Organization.Type.values()){
             if ((type.getValue().equals(Type.SupplyIncome.getValue()))
-             || (type.getValue().equals(Type.SupplyOutcome.getValue())))
+             || (type.getValue().equals(Type.SupplyDataAnalysis.getValue())))
                 organizationJComboBox.addItem(type);
         }
     }
@@ -73,7 +73,7 @@ public class ManageOrganizationJPanel extends keeptoo.KGradientPanel {
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 255));
@@ -136,7 +136,7 @@ public class ManageOrganizationJPanel extends keeptoo.KGradientPanel {
         });
         kGradientPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
 
-        add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 700));
+        add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

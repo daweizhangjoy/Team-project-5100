@@ -9,6 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Total_UserAccount.UserAccount;
+import interface1.supply.supplyDataAnalyseRole.SupplyDataAnalysisJPanel;
 import keeptoo.KGradientPanel;
 
 /**
@@ -20,7 +21,7 @@ public abstract class Role {
     public enum RoleType{
         HospitalHRAdmin("HospitalHRAdmin"), HospitalAdmin("HospitalAdmin"), HospitalPatient("HospitalPatient"), HospitalSupplyManage("HospitalSupplyManage"), 
         ShelterAdopt("ShelterAdopt"), ShelterAdmin("ShelterAdmin"), ShelterPetKeep("ShelterPetKeep"), ShelterSupplyManage("ShelterSupplyManage"), 
-        SupplyIncome("SupplyIncome"), SupplyOutcome("SupplyOutcome"), SupplyAdmin("SupplyAdmin");
+        SupplyDataAnalysis("SupplyDataAnalysis"), SupplyIncome("SupplyIncome"), SupplyAdmin("SupplyAdmin");
         
         private String value;
         private RoleType(String value){
