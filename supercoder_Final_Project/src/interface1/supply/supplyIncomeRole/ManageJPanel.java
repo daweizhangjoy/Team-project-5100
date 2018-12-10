@@ -92,7 +92,7 @@ public class ManageJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "supply id", "supply name", "supply quantity", "Category"
+                "supply id", "supply quantity", "supply name", "Category"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -105,7 +105,7 @@ public class ManageJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(pRTable);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 560, 180));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 560, 290));
 
         addButton.setText("Add more");
         addButton.addActionListener(new java.awt.event.ActionListener() {

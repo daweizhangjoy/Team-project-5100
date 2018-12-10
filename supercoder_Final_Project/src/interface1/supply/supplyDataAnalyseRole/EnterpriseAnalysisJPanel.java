@@ -113,7 +113,7 @@ public class EnterpriseAnalysisJPanel extends keeptoo.KGradientPanel {
         kGradientPanel1.add(generateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Enterprise Number");
         kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 370, 30));
 
         add(kGradientPanel1, "card2");

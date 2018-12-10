@@ -163,9 +163,6 @@ public class ShelterPetKeepJPanel extends keeptoo.KGradientPanel {
             
             JOptionPane.showMessageDialog(null, "Add Successfully");
             
-            userProcessContainer.remove(this);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.previous(userProcessContainer);
         }
         
     }//GEN-LAST:event_createButton1ActionPerformed
