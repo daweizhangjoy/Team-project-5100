@@ -62,9 +62,9 @@ public abstract class Enterprise extends Organization{
         return enterpriseID;
     }
     
-    @Override
-    public String toString()
-    {
-        return String.valueOf(enterpriseID);
-    }
+//    @Override
+//    public String toString()
+//    {
+//        return String.valueOf(enterpriseID);
+//    }
 }

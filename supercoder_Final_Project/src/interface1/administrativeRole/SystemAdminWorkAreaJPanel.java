@@ -94,7 +94,7 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
         btnManageAdmin = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(700, 700));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         jSplitPane1.setDividerLocation(200);
         jSplitPane1.setDividerSize(0);
@@ -154,7 +154,7 @@ public class SystemAdminWorkAreaJPanel extends keeptoo.KGradientPanel {
 
         jSplitPane1.setRightComponent(jPanel2);
 
-        add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jSplitPane1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNetworkActionPerformed
